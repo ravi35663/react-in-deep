@@ -1,0 +1,548 @@
+####### Code slow always(to learn in deep) (Don't hurry).
+--> Learn about CDN
+--> crossorigin ?
+-> Package.json is configuration file for npm.
+-> react is a javascript library which is created by facebook developers
+-> we can create our own create-react-app using webpack and all.
+
+==> Bundler : -
+-> Bundler is used to Bundle your applications which will deploy to production
+-> bundler is small 
+-> create-react app uses webpack bundler to deploy code into production
+-> '^2.7.8' => 'major.minor.'
+-> '^' -> caret => (caret is used to upgrade minor version of package)
+-> '~' -> tilde => (tilde is use to upgrade major version of the package) 
+-> package-lock.json is used to store exact version of the packages (dependencies)
+-> Parcel uses babel
+
+===> Transitive dependencies : 
+->  When dependencies of modules 1 is depends on other and other modules have 
+    dependencies of other modules and so on.. is known as transitive dependencies.
+-> dependencies tree 
+
+==> Parcel : -
+    ->  Parcel is a zero configuration build tool for the web. 
+        It combines a great out-of-the-box development experience with a scalable 
+        architecture that can take your project from just getting started to 
+        massive production application.
+    => Things done by parcel
+        -> HMR : hot module replacement (automatically run file when you save file)
+        -> Dev Build
+        -> Provide local server
+        -> Parcel uses file watching algorithm (for HMR):- written in c++
+        -> Gives you faster build because of caching(.parcel-cache kind 
+           of binary file)
+        -> Parcel does image optimization
+        -> Minification of files (Project files)
+        -> Bundling
+        -> Compressing of files
+        -> Parcel is manager (Parcel use all libraries to make react fast)
+        -> Consistent hashing
+        -> COde splitting
+        -> Differentials bundling (to support older browser (diff. bundle for diff browser))
+        -> Error handling
+        -> Diagnostic
+        -> Host app on Https 
+        -> Tree Shaking (remove unused code for you)
+        -> Create different dev and prod bundle
+        -> npx parcel build index.html (building production build)
+        -> Gives you only three files .js,.html and .css
+        -> .parcel-cache and dist can be automatically generated
+        -> Till lesson 2 we're created our own create react app
+        -> not only react is making your faster , webpack are making your 
+           app fast.
+        ->  Builder build all files and generated on file but if you have big app then it would not considered 
+            as optimized application unless you bundle them in smaller files and this process is 
+            known as code splitting/chunking/lazy loading/dynamic bundling/dynamic import.
+            This is also known as logical code splitting/ bundling.
+
+-> Build Application using Parcel:
+    -> npx parcel source_file
+    -> it creates dist file
+    -> .parcel-cache
+    -> npx means executive any package
+    -> there are two kinds of dependencies in package.json 
+        1) devDependencies (used only for develop and testing purpose not for production)
+        2) dependencies (normal dependencies)
+    "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1",
+            "start":"parcel index.html",// for dev 
+            "build":"parcel build index.html" // for prod
+        }
+    -> npm start === npm run start
+    -> never run "npm build" instead run "npm run build" 
+
+===> React Element:-
+    -> ReactElement ==> Javascript Object ==> Html Element (when it is rendered)
+    -> ReactElement is javascript Object
+    -> JSX ==> ReactElement ==> Javascript Object ==> Html Element (when it is rendered)
+
+===> React vs ReactDOM :-
+-> React is used to create elements 
+-> ReactDOM is used to display React elements into browser
+-> JSX is way of writing javascript element
+-> JSX is not HTML inside javascript
+-> JSX is like HTML syntax  
+--> const heading = React.createElement('h1',{id:"heading"},"Hello World");
+    -> Element using react
+--> const jsxHeading = <h1>Hello World</h1> (Element using jsx)
+    -> above two lines are equivalent
+    -> jsx is not pure javascript because browser and machine cannot understand this.
+    -> jsx before going to browser it (babel) webpack transpile the code so that browser can understand. 
+==> Babel
+-> Babel is open source javascript compiler
+-> Babel transpile the newer javascript code to older JS code so that 
+   older browser can understand that.
+-> Learn more about babel
+
+===> JSX :-
+    -> const h1 = <h1>Hello World</h1> // Valid jsx
+    -> const h1 = <h1>
+                    Hello World 
+                  </h1> // Invalid JSX
+    -> const h1 = (<h1>
+                    Hello World 
+                  </h1>) // Valid JSX
+    -> JSX is take care of injections attacks
+    -> JSX also sanitized the data and prevent cross site scripting
+
+===> Components : -
+-> Everything in react is a component.
+-> e.g. button , card ...etc
+    1) Class based Components (old way of writing code )
+    2) Functional Components (New way of writing code)
+-> Functional component is normal js function which return some jsx
+->  const HeadingComponent = ()=>{
+        return (<h1>Functional Components</h1>)
+    } // this is a react component
+-> const HeadingComponent = () => <h1>Functional Components</h1>
+-> this is how we render Components
+    <HeadingComponent />;
+    {HeadingComponent()};
+    <HeadingComponent></HeadingComponent>;
+-> components composition is components inside another components and so on.
+-> write components in Capital latter.
+
+===> Props :-
+    -> Short form of properties
+    -> props are just arguments to a function
+    -> const fun = ({name,age,email}) => { 
+            // parameter destructuring is know as destructuring on fly.
+        }
+
+===> Config driven UI :-
+    ->  on same website when we change UI depends on the locations or something
+        else is know as config driven UI. UI will changed based on requirements
+    -> config comes from backend .
+    -> We have control on UI.
+    -> React say that never uses index as key. never never never.
+
+===> React Hooks:-
+-> Hooks are normal util javascript functions which do some special works
+-> these are most of useful react hooks.
+-> useState() :- used to update UI based on state of the variable.
+    -> whenever a state variable is updates react re-rendered the component.
+    -> React only good at DOM manipulation.
+-> useEffect()  :-
+    -> special javascript function react.
+    -> useEffect(callback_function,[dependencies array]);
+    -> Use effect is called after the component is rendered.
+    -> first the body of that component will run then useEffect will run.
+
+
+==> Separation of Concerns (SoC) :-
+-> Separation of Concerns (SoC) is a fundamental design principle in software engineering that 
+   advocates breaking a program into distinct features or modules, each responsible for a 
+   specific concern. 
+   In the context of microservices architecture, SoC is crucial for building scalable, maintainable, 
+   and flexible systems. 
+   Here's how the concept of SoC applies to microservices:
+
+==> Shimmer UI:-
+-> Loading card with empty data(for better user experience)
+-> Loading fake page/card till the data is load
+
+/*
+        1) Every time Header component is rendered, this use effect is called.But because of the dependencies 
+           array the useEffect will executed.
+        2) Dependencies arrays are not mandatory in useEffect.If there is no dependencies array in useEffect
+           every time component is rendered the useEffect getting called.
+        3) if dependencies array is empty then useEffect only called on initial render only one time.
+        4) if we provide some values in dependencies array then useEffect only called when dependencies changes.
+*/
+
+-> Never use hooks Conditionally,in loop,or in function.
+-> hooks are only used inside components.
+
+==> Routing in react :-
+-> client side routing : when all the pages already loaded and moving from one page to another won't reload the page.
+-> server side routing : when the pages are not loaded at once. whenever we move from one page to 
+   another page will be loaded and that page coming from the server.(i.e. index.html,about.html ..etc)
+
+==> Dynamic routing :-
+
+
+===> Notes:
+-> there is two way to export module.
+    -> default export (export default anything) to import anything
+    -> named export (export const data=[1,2]) to import use {data}
+->  React is fast in DOM manipulation and this is the exact issue react is
+    solving. This is why we use react. and all other trying to solving this issue.
+-> Actual DOM :- <h1>Actual dom</h1>,<img> ...etc
+-> Virtual DOM :- Representation of actual DOM.
+    -> Virtual DOM is react-element and it will print javascript object.
+->  Diff algorithm find out the diff between virtual DOM (Old and new Virtual DOM) 
+    and then it will render the objects. this whole process is known as reconciliation or react fiber.
+-> finding out difference between two html element is slow but between javascript object is fast.
+    this where the react become fast.
+-> React keeps track of all node (react elements)
+-> Learn microservices and monolithic in deep
+-> CORS issue:-
+    -> Generally our browser block us to fetch different origin's API access to local host.
+    -> we can by-pass this by installing cors extension.
+-> Whenever a local state (state variable) variable is changed, that particular component re-rendered.
+-> react do efficient dom manipulation, efficient rendering of components.
+-> All react app is single page application because only component get interchanged not entire application's page.
+-> render, loading and mounted has same meaning.
+-> // Conditional rendering
+    if(!listOfRestaurant.length){
+        return <Shimmer />
+    }
+-> Learn about react-dev-tool(and why we should use it)
+-> Every frontend has two layers
+    1) UI layers
+    2) Data layer
+
+===> HOC: (Higher order component):-
+    -> HOC is a function that takes a component and return a component.
+    -> HOC take a component and enhance that component and return them back.
+    -> In React, a Higher-Order Component (HOC) is a pattern where a function takes a component and 
+       returns a new component with additional functionality or props. 
+       HOCs allow you to reuse component logic, share code, and compose components in a more modular 
+       and reusable way.
+
+==> Why do we use HOC:-
+-> Code Reusability:    
+    HOCs enable you to encapsulate and reuse component logic. Instead of duplicating the same logic 
+    across multiple components, you can create an HOC and apply it to different components.
+
+-> Cross-Cutting Concerns:
+    HOCs are often used for cross-cutting concerns, such as authentication, logging, or tracking. 
+    These concerns can be applied to multiple components without cluttering the individual components 
+    with the related logic.
+
+-> Abstraction of State or Behavior:
+    HOCs allow you to abstract away certain aspects of state management or behavior, making your 
+    components more focused and easier to understand.
+
+==> Lifting state up:
+-> sharing state between components.
+-> Sometimes, you want the state of more than one components to always change together. 
+   To do it, remove state from all of them, move it to their closest common parent, and then pass it 
+   down to them via props. This is known as lifting state up, and it’s one of the most common things 
+   you will do writing React code.
+
+==> Props Drilling :-
+-> Passing data is very complex when the application is very huge.
+-> react has 1 way data flow. (parent to children) (Top to bottom)
+-> Example:
+    // Parent Component
+    const dummy = "Dummy"
+    <Parent>
+        <Child dummy={dummy}></Child>
+    </Parent>
+
+    // Child component
+    const Child = ({dummy})=>{
+        return <GrandChild dummy={dummy}></ GrandChild>
+    }
+
+    -> here dummy need to uses by GrandChild component but dummy is in Parent component.hence we are drilling 
+       dummy from parent to grandchild including child component. this is known as props drilling.
+-> This props drilling is a problem in react.
+-> we use react context to overcome props drilling.
+
+==> Context (React context):
+-> This is a place where you can store data globally/module_wise so that you can access it in any component without 
+   props drilling.
+-> In react we can create as many context we want to.
+-> In class based components we cannot use context because we don't have hooks in class based component.
+->  but we can also use that context using <ContextName.Consumer> (data)=> console.log("Data ",data)</ContextName.Consumer>
+    you can get all context data into you class based component.
+
+-> If you want to change context data, you have wrap all you components inside Provider.
+    <ContextName.Provider value={{}}> </ContextName.Provider>
+-> context is data management API.
+-> Redux is external redux and it is state management library
+-> for small application don't use redux
+-> you can create any large application using context.
+
+========================================> Hooks In react <========================================
+1) useState: 
+2) useEffect
+
+===> 3)UseContext:-
+-> useContext is a hook in react which is used to share values/data across its children components.
+-> Context is way to share values, such as themes, authentication status between component without
+   explicitly passing data through each level of the component tree.
+
+-> We use context to avoid props drilling (passing props in each level of the components tree)
+-> we use context to write cleaner code.
+-> See example where it is implemented.
+
+
+
+===> 4) useCallback:
+-> 'useCallback' is a react hook which is that is used for memoisation of functions.
+-> useCallback return a memoised version of callback function that only changes if any 
+   dependencies of that callback is changed.
+-> this can be particularly useful for optimizing performance in certain scenarios.
+
+=> Used for performance optimization:-
+    If a parent component is re-rendered , all of its child component is re-rendered too, the functions passed
+    into the children components are changed on parent rendered because every render a new function is created. 
+    But with the help of 'useCallback' the function would be memoised and hence if parent component is changed 
+    then child component won't changes because the prop function of child components won't changes().
+    callback function only changed if any dependencies of that callback us changed.
+
+=> Avoiding unnecessary rendered.
+-> Especially when there are complex calculations or prop function passed to a child component.
+   It prevent unnecessary child rendering if parent component is re-rendered.
+
+
+===> 5) useMemo:
+-> useMemo is a react hook which is used to memoisation of result so that the computation is only re-rendered
+   if any dependencies has changed.
+-> useMemo helps optimize the performance of the functional components by preventing unnecessary 
+   recalculation of values, especially in scenarios where the computation is resource-intensive.
+
+=> Performance Optimization :-
+-> React-component re-rendered whenever a state or props changes in the component. If a component is 
+   rendering a complex computation, such as a costly calculation or a large data transformation, 
+   it might be inefficient to recompute that value on every render, especially if the inputs haven't 
+   changed.
+
+=> Avoiding Unnecessary Calculations
+-> useMemo allows you to memoize the result of a computation and only recalculate it when the 
+   dependencies change. This can be particularly useful in scenarios where the computation involves 
+   heavy computations, API calls, or other time-consuming tasks.
+-> useMemo is used for value memoisation while useCallback is used for function optimization to enhance
+   performance of the component while reducing re-calculation and re-creation of value and function again and again.
+
+   const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+
+===> 6) UseReducer :-
+-> In React, the 'useReducer' Hook is a state management Hook that is used as an alternative to useState 
+   when the state logic is complex and involves multiple sub-values or when the next state depends on 
+   the previous one. It's particularly useful for managing state in more predictable ways, especially 
+   when dealing with complex state transitions.
+-> useReducer -> alternative of useState 
+-> useReducer is useful if state logic is too complex
+
+=>Complex State Logic:
+-> When the state logic becomes complex, especially with multiple sub-values or when the next state 
+   depends on the previous state, useReducer can provide a more organized and maintainable solution 
+   compared to using multiple useState calls.
+
+=> Predictable State Transitions:
+-> useReducer is useful when the state transitions are more predictable and can be expressed as a 
+   series of actions. It allows you to update the state based on actions, leading to more explicit and 
+   understandable code.
+=> Stateful Logic in a Single Place:
+-> With useReducer, you can centralize stateful logic in a reducer function, making it easier to 
+   manage and reason about the state changes in a single place.
+
+   ** Basic syntax of useReducer:
+   const [state, dispatch] = useReducer(reducer, initialState);
+   * state: represents the current state.
+   * dispatch: is a function used to dispatch actions to update the state.(just like setState)
+   * reducer: is a function that takes the current state and an action and returns the new state.
+   * initialState: is the initial state of the component.
+
+===> 7) useRef:
+-> In React, the useRef Hook is used to create mutable object references that persist across renders. 
+-> Unlike state variables, changes to useRef do not trigger a re-render of the component. 
+-> useRef is often used to access or store references to DOM elements, manage focus, or persist values 
+   between renders without causing re-renders.
+-> we can use reference whenever we want to , its actual DOM not virtual DOM of element.
+-> without using any stateVariables we can get value of input element .
+
+=> Why Use useRef?
+-> Accessing DOM Elements: 
+    One common use case for useRef is to obtain references to DOM elements. This is useful when you 
+    need to interact with the DOM directly, such as focusing on an input field, measuring the size of 
+    an element, or triggering animations.
+
+-> Managing Focus:
+    useRef is commonly used to manage focus in React components. You can create a ref and attach it to 
+    a specific element, allowing you to programmatically set or remove focus without triggering a 
+    re-render.
+
+-> Persisting Values Across Renders:
+    Unlike state variables, changes to useRef do not trigger a re-render. This makes it suitable for 
+    persisting values across renders without affecting the component's rendering cycle.
+
+===>Life Cycle methods in react:-
+-> Lifecycle methods in React are used to perform specific tasks or actions at various points in the 
+   lifecycle of a React component. Each component goes through a series of phases, and lifecycle methods 
+   provide developers with the ability to hook into these phases and execute code accordingly. 
+   Here are some reasons why lifecycle methods are essential in React:
+
+   1)Initialization and Setup:
+        -> constructor: Used for initializing the component's state and binding event handlers.
+        -> componentDidMount: Invoked after the component has been inserted into the DOM. 
+           It's commonly used for performing initial data fetching or setting up subscriptions.
+
+    2) Updating State and Props:-
+        -> shouldComponentUpdate: Allows you to control whether the component should re-render after a 
+           state or prop change. Optimizing this method can prevent unnecessary renders.
+        -> componentDidUpdate: Invoked after the component updates. Useful for performing side effects 
+           after a state or prop change.
+
+    3) Cleanup and Resource Management:
+        -> componentWillUnmount: Called just before the component is removed from the DOM. 
+           Used for cleanup tasks like cancelling network requests, clearing intervals, or unsubscribing 
+           from data streams.
+
+    4) Error Handling:
+        -> componentDidCatch: Introduced in React 16, this method is used to catch JavaScript errors 
+           anywhere in the component tree. It allows you to log errors or display a fallback UI.
+
+    5) Optimizing Performance:
+    
+-> While lifecycle methods are powerful, it's essential to note that with the introduction of Hooks in 
+   React 16.8, functional components have become a common way to write components, and the need for 
+   class-based lifecycle methods has diminished. 
+   The useEffect Hook, in particular, covers most scenarios where lifecycle methods were traditionally 
+   used.
+-> In functional components, useEffect allows you to manage side effects and perform cleanup tasks, 
+   similar to componentDidMount, componentDidUpdate, and componentWillUnmount in class components. 
+   The choice between class components and functional components with Hooks often depends on the project's
+   requirements, team preferences, and the specific use case.
+
+-> In functional components in React, you can use the useEffect Hook to achieve similar effects as the 
+   lifecycle methods in class components. useEffect allows you to perform side effects in your functional 
+   components, such as fetching data, subscribing to external events, or manually managing subscriptions.
+
+## Here's a brief comparison between lifecycle methods in class components and the equivalent 
+   functionality using useEffect in functional components:
+   ==> Classed Based Components:
+        class App extends React.Component{
+            componentDidMount(){
+                // This function is called after first render of the component in the DOM.
+            }
+
+            componentDidUpdate(prepProps,PrevState){
+                // This life cycle method is called after each render of the component.
+            }
+
+            render(){
+                return <div>This is App component</div>
+            }
+        }
+
+    ==> Function Component (Modern React)
+        function App(){
+            useEffect(()=>{
+                // This is called after first render of component in DOM.
+                // call of useEffect with empty dependencies is equivalent to componentDidMount in class based comp.
+                
+                //this is equivalent to life cycle method componentWillUnmount
+                return ()=>{
+                    console.log("Return a clean up function if needed);
+                }
+            },[]);
+
+            useEffect(()=>{
+                console.log("This useEffect hook is run after each render of the component.");
+            })
+
+            useEffect(()=>{
+                console.log("This useEffect hook is called whenever someProps or someVar value changes");
+            },[someProps,someVar]) 
+            // You can write clean up function in reach useEffect.
+            return <div>This is app component</div>
+        }
+-> Keep in mind that useEffect can cover scenarios equivalent to componentWillUnmount as well, by returning 
+   a cleanup function inside the useEffect. 
+   Additionally, it can be used to handle scenarios like componentDidCatch by catching errors inside the 
+   component and logging or handling them.
+-> In functional Components useEffect hook replaced life cycle methods. 
+-> Hooks are introduced in react 16.8 version
+-> Hooks are nothing but special javascript function with some super power to do some very special kind of 
+   works.
+
+
+=========> Redux:
+-> Redux is a state management library for JavaScript applications, primarily used with 
+   React for building user interfaces. 
+-> Redux provides a predictable state container, which helps manage the state of an 
+   application in a more organized and scalable way. 
+-> Redux follows a unidirectional data flow and introduces concepts such as actions, reducers, 
+   and a single immutable state tree.
+
+===> Why do we use redux :-
+--> Centralized State Management: 
+    Redux provides a centralized store where the entire state of an application is stored. 
+    This makes it easier to manage and debug complex state interactions.
+
+--> Predictable State Changes: 
+    Redux follows a strict unidirectional data flow, making it easier to understand how the 
+    state changes over time. Changes to the state are made through pure functions called 
+    reducers.
+
+--> Debugging and Time Travel: 
+    Redux has excellent debugging tools, and it supports time-travel debugging, allowing 
+    developers to move back and forth between different states in the application.
+
+--> Consistent Application Structure: 
+    Redux encourages a structured approach to organizing code, making it easier to maintain 
+    and scale applications.
+
+--> Middleware Support: 
+    Redux has middleware support, enabling developers to extend the functionality of Redux 
+    with custom middleware for tasks like logging, asynchronous actions, and more.
+
+
+=======> Redux-Tool-Kit
+--> Redux Toolkit is an opinionated set of utilities and tools for simplifying and improving 
+    the development experience with Redux. 
+--> It includes several packages that work together to provide a streamlined approach to 
+    writing Redux logic. 
+--> The main packages included in Redux Toolkit are:    
+-> '@reduxjs/toolkit': The core package that includes utility functions and abstractions to 
+    simplify common Redux use cases.
+-> redux-thunk: A middleware for handling asynchronous logic in redux.
+-> @reduxjs/immer: Integrates the Immer library to allow writing reducers with a simpler 
+   syntax that resembles mutable code.
+-> @reduxjs/reselect: Provides a selector library for creating memoized selectors.
+
+==> Why do we use redux-tool-kit?
+--> Boilerplate Reduction: 
+    Redux Toolkit significantly reduces the amount of boilerplate code needed for setting up 
+    a Redux store, writing reducers, and creating actions.
+
+--> Simplified Syntax: 
+    It introduces a simplified and opinionated syntax for defining reducers, making it \
+    easier to understand and write Redux logic.
+
+--> Immutability with Immer: 
+    The integration with Immer allows writing reducers with a mutable-style syntax, making 
+    it more intuitive to update the state.
+
+--> Async Logic with Thunks: 
+    Redux Toolkit includes the createAsyncThunk utility to simplify handling asynchronous 
+    logic using thunks.
+
+--> DevTools Integration: 
+    It comes with built-in integration for the Redux DevTools Extension, making it easier 
+    to debug and inspect the state of your application.
+
+==> Steps to setup redux-toolkit
+    1) install dependencies
+    2) Create redux store
+    3) Write Reducers using createSlice:
+    4) Combine Reducers:
+    5) Connect Components:
+    6) Provide the Store:
+
