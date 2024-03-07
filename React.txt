@@ -88,7 +88,8 @@
 --> const jsxHeading = <h1>Hello World</h1> (Element using jsx)
     -> above two lines are equivalent
     -> jsx is not pure javascript because browser and machine cannot understand this.
-    -> jsx before going to browser it (babel) webpack transpile the code so that browser can understand. 
+    -> jsx before going to browser, (babel) webpack transpile the code so that browser can understand. 
+
 ==> Babel
 -> Babel is open source javascript compiler
 -> Babel transpile the newer javascript code to older JS code so that 
@@ -175,9 +176,10 @@
 -> hooks are only used inside components.
 
 ==> Routing in react :-
--> client side routing : when all the pages already loaded and moving from one page to another won't reload the page.
--> server side routing : when the pages are not loaded at once. whenever we move from one page to 
-   another page will be loaded and that page coming from the server.(i.e. index.html,about.html ..etc)
+->  client side routing : when all the pages already loaded and moving from one page to another 
+    won't reload the page.
+->  server side routing : when the pages are not loaded at once. whenever we move from one page to 
+    another page will be loaded and that page coming from the server.(i.e. index.html,about.html ..etc)
 
 ==> Dynamic routing :-
 
@@ -188,13 +190,14 @@
     -> named export (export const data=[1,2]) to import use {data}
 ->  React is fast in DOM manipulation and this is the exact issue react is
     solving. This is why we use react. and all other trying to solving this issue.
+
 -> Actual DOM :- <h1>Actual dom</h1>,<img> ...etc
 -> Virtual DOM :- Representation of actual DOM.
     -> Virtual DOM is react-element and it will print javascript object.
-->  Diff algorithm find out the diff between virtual DOM (Old and new Virtual DOM) 
+->  Diff algorithm find out the diff between virtual DOMs (Old and new Virtual DOM) 
     and then it will render the objects. this whole process is known as reconciliation or react fiber.
 -> finding out difference between two html element is slow but between javascript object is fast.
-    this where the react become fast.
+    this is where the react become fast.
 -> React keeps track of all node (react elements)
 -> Learn microservices and monolithic in deep
 -> CORS issue:-
@@ -202,7 +205,7 @@
     -> we can by-pass this by installing cors extension.
 -> Whenever a local state (state variable) variable is changed, that particular component re-rendered.
 -> react do efficient dom manipulation, efficient rendering of components.
--> All react app is single page application because only component get interchanged not entire application's page.
+-> All react app a is single page application because only component get interchanged not entire application's page.
 -> render, loading and mounted has same meaning.
 -> // Conditional rendering
     if(!listOfRestaurant.length){
@@ -214,7 +217,7 @@
     2) Data layer
 
 ===> HOC: (Higher order component):-
-    -> HOC is a function that takes a component and return a component.
+    -> HOC is a function that takes a component and return a enhanced component.
     -> HOC take a component and enhance that component and return them back.
     -> In React, a Higher-Order Component (HOC) is a pattern where a function takes a component and 
        returns a new component with additional functionality or props. 
@@ -240,7 +243,7 @@
 -> Sometimes, you want the state of more than one components to always change together. 
    To do it, remove state from all of them, move it to their closest common parent, and then pass it 
    down to them via props. This is known as lifting state up, and it’s one of the most common things 
-   you will do writing React code.
+   you will do while writing React code.
 
 ==> Props Drilling :-
 -> Passing data is very complex when the application is very huge.
@@ -267,13 +270,14 @@
    props drilling.
 -> In react we can create as many context we want to.
 -> In class based components we cannot use context because we don't have hooks in class based component.
-->  but we can also use that context using <ContextName.Consumer> (data)=> console.log("Data ",data)</ContextName.Consumer>
+->  but we can also use that context using 
+    <ContextName.Consumer> (data)=> console.log("Data ",data)</ContextName.Consumer>
     you can get all context data into you class based component.
 
 -> If you want to change context data, you have wrap all you components inside Provider.
     <ContextName.Provider value={{}}> </ContextName.Provider>
 -> context is data management API.
--> Redux is external redux and it is state management library
+-> Redux is external and it is state management library
 -> for small application don't use redux
 -> you can create any large application using context.
 
@@ -293,17 +297,18 @@
 
 
 ===> 4) useCallback:
--> 'useCallback' is a react hook which is that is used for memoisation of functions.
+-> 'useCallback' is a react hook which is used for memoisation of functions.
 -> useCallback return a memoised version of callback function that only changes if any 
    dependencies of that callback is changed.
 -> this can be particularly useful for optimizing performance in certain scenarios.
 
 => Used for performance optimization:-
-    If a parent component is re-rendered , all of its child component is re-rendered too, the functions passed
-    into the children components are changed on parent rendered because every render a new function is created. 
-    But with the help of 'useCallback' the function would be memoised and hence if parent component is changed 
-    then child component won't changes because the prop function of child components won't changes().
-    callback function only changed if any dependencies of that callback us changed.
+    If a parent component is re-rendered , all of its child component is re-rendered too, 
+    the functions passed into the children components are changed on parent rendered because every
+    render a new function is created. But with the help of 'useCallback' the function would be 
+    memoised and hence if parent component is changed then child component won't changes because 
+    the prop function of child components won't changes(). callback function only changed if any 
+    dependencies of that callback us changed.
 
 => Avoiding unnecessary rendered.
 -> Especially when there are complex calculations or prop function passed to a child component.
@@ -311,8 +316,8 @@
 
 
 ===> 5) useMemo:
--> useMemo is a react hook which is used to memoisation of result so that the computation is only re-rendered
-   if any dependencies has changed.
+->  useMemo is a react hook which is used to memoisation of result so that the computation is only 
+    re-rendered if any dependencies has changed.
 -> useMemo helps optimize the performance of the functional components by preventing unnecessary 
    recalculation of values, especially in scenarios where the computation is resource-intensive.
 
@@ -588,9 +593,9 @@
                                     |
     [Style] --> [CSS Parser] -> [style rule]
 
---> Re-calculating the CSS and changing layouts uses very complex algorithm & they affect they
-    affect the performance. Hence updating a real dom does not involve just updating the DOM but,
-    it involve a lot of other process like.
+--> Re-calculating the CSS and changing layouts uses very complex algorithm & they affect  the 
+    performance. Hence updating a real dom does not involve just updating the DOM but, it 
+    involve a lot of other process like.
         -> Re-Calculating Css   
         -> Changing layouts
         -> attachment of parsed HTML and CSS
@@ -607,7 +612,7 @@
     -> Efficient Diff algorithm 
     -> Batched Update operation
     -> Efficient Update of subtree only
-    -> uses observable instead of dirty checking ti detect changes.
+    -> uses observable instead of dirty checking to detect changes.
 
 Note: 
 1)  angular uses dirty checking to find this models which have changed.This dirty checking
@@ -644,7 +649,7 @@ Note:
     the element H. This is the reason to use BFS for tree traversal.
                      (A)
                     /    \
-                   /       \
+                   /      \
                  [B]       (C)
                  /  \      /  \
                 /    \    /    \
@@ -670,3 +675,24 @@ Note:
     -> Once all the steps are executed, React will repaint the Real DOM. This means during 
        the event loop, there is exactly one time when the Real DOM is being painted. 
        Thus all the layout process will run only on time for updating the real DOM.
+
+=========> SSR vs CSR (Server-Side-Rendering VS Client-Side-Rendering):-
+===> SSR :-
+--> server-side-rendering is when you request a HTML page from the server and server 
+    serve you a HTML page.
+--> SSR-at request time:-
+    Server side rendering may happen at request-time, in which case the server dynamically 
+    generates the HTML for each URL request at run time.
+    This is also called Dynamic Server Side Rendering.
+
+--> SSR-at build time:
+    Alternatively, the HTML for the web pages may be pre-generated on the server side at 
+    “build” time, and this pre-generated static HTML is returned to the browser, 
+    when the webpage is requested
+    i.e. HTML is pre-generated, and is not generated on the fly at request-time.
+    This is also called Pre-rendering.
+
+===> Client Side Rendering (CSR):
+--> Client Side Rendering means generating the HTML components on the browser side, by 
+    executing Javascript code within the browser that manipulates the HTML DOM to build 
+    the HTML nodes.
