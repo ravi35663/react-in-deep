@@ -1,4 +1,4 @@
-####### Code slow always(to learn in deep) (Don't hurry).
+####### Always Code slow (to learn thingsin deep) (Don't hurry).
 --> Learn about CDN
 --> crossorigin ?
 -> Package.json is configuration file for npm.
@@ -51,7 +51,7 @@
         -> Till lesson 2 we're created our own create react app
         -> not only react is making your faster , webpack are making your 
            app fast.
-        ->  Builder build all files and generated on file but if you have big app then it would not considered 
+        ->  Builder build all files and generated one file but if you have big app then it would not considered 
             as optimized application unless you bundle them in smaller files and this process is 
             known as code splitting/chunking/lazy loading/dynamic bundling/dynamic import.
             This is also known as logical code splitting/ bundling.
@@ -132,7 +132,7 @@
         }
 
 ===> Config driven UI :-
-    ->  on same website when we change UI depends on the locations or something
+    ->  on some website when we change UI depends on the locations or something
         else is know as config driven UI. UI will changed based on requirements
     -> config comes from backend .
     -> We have control on UI.
@@ -199,13 +199,16 @@
 -> finding out difference between two html element is slow but between javascript object is fast.
     this is where the react become fast.
 -> React keeps track of all node (react elements)
--> Learn microservices and monolithic in deep
+
+==> Learn microservices and monolithic architecture in deep
+
 -> CORS issue:-
     -> Generally our browser block us to fetch different origin's API access to local host.
     -> we can by-pass this by installing cors extension.
 -> Whenever a local state (state variable) variable is changed, that particular component re-rendered.
 -> react do efficient dom manipulation, efficient rendering of components.
--> All react app a is single page application because only component get interchanged not entire application's page.
+-> All react app a is single page application (SPA) because only component get interchanged 
+   not entire application's page.
 -> render, loading and mounted has same meaning.
 -> // Conditional rendering
     if(!listOfRestaurant.length){
@@ -308,7 +311,7 @@
     render a new function is created. But with the help of 'useCallback' the function would be 
     memoised and hence if parent component is changed then child component won't changes because 
     the prop function of child components won't changes(). callback function only changed if any 
-    dependencies of that callback us changed.
+    dependencies of that callback is changed.
 
 => Avoiding unnecessary rendered.
 -> Especially when there are complex calculations or prop function passed to a child component.
@@ -317,14 +320,14 @@
 
 ===> 5) useMemo:
 ->  useMemo is a react hook which is used to memoisation of result so that the computation is only 
-    re-rendered if any dependencies has changed.
+    re-rendered if any dependencies are changed.
 -> useMemo helps optimize the performance of the functional components by preventing unnecessary 
    recalculation of values, especially in scenarios where the computation is resource-intensive.
 
 => Performance Optimization :-
 -> React-component re-rendered whenever a state or props changes in the component. If a component is 
    rendering a complex computation, such as a costly calculation or a large data transformation, 
-   it might be inefficient to recompute that value on every render, especially if the inputs haven't 
+   it might be in-efficient to re-compute that value on every render, especially if the inputs haven't 
    changed.
 
 => Avoiding Unnecessary Calculations
@@ -353,6 +356,7 @@
 -> useReducer is useful when the state transitions are more predictable and can be expressed as a 
    series of actions. It allows you to update the state based on actions, leading to more explicit and 
    understandable code.
+
 => Stateful Logic in a Single Place:
 -> With useReducer, you can centralize stateful logic in a reducer function, making it easier to 
    manage and reason about the state changes in a single place.
@@ -477,6 +481,7 @@
 -> Hooks are nothing but special javascript function with some super power to do some very special kind of 
    works.
 
+====> Next
 
 =========> Redux:
 -> Redux is a state management library for JavaScript applications, primarily used with 
