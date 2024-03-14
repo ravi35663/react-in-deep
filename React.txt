@@ -140,7 +140,7 @@
 
 ===> React Hooks:-
 -> Hooks are normal util javascript functions which do some special works
--> these are most of useful react hooks.
+-> these are most useful react hooks.
 -> useState() :- used to update UI based on state of the variable.
     -> whenever a state variable is updates react re-rendered the component.
     -> React only good at DOM manipulation.
