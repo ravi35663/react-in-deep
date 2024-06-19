@@ -51,7 +51,7 @@
         -> Till lesson 2 we're created our own create react app
         -> not only react is making your faster , webpack are making your 
            app fast.
-        ->  Builder build all files and generated on file but if you have big app then it would not considered 
+        ->  Builder build all files and generated one file but if you have big app then it would not considered 
             as optimized application unless you bundle them in smaller files and this process is 
             known as code splitting/chunking/lazy loading/dynamic bundling/dynamic import.
             This is also known as logical code splitting/ bundling.
@@ -189,6 +189,7 @@
 ->  React is fast in DOM manipulation and this is the exact issue react is
     solving. This is why we use react. and all other trying to solving this issue.
 -> Actual DOM :- <h1>Actual dom</h1>,<img> ...etc
+
 -> Virtual DOM :- Representation of actual DOM.
     -> Virtual DOM is react-element and it will print javascript object.
 ->  Diff algorithm find out the diff between virtual DOM (Old and new Virtual DOM) 
@@ -197,6 +198,7 @@
     this where the react become fast.
 -> React keeps track of all node (react elements)
 -> Learn microservices and monolithic in deep
+
 -> CORS issue:-
     -> Generally our browser block us to fetch different origin's API access to local host.
     -> we can by-pass this by installing cors extension.
@@ -301,8 +303,8 @@
 => Used for performance optimization:-
     If a parent component is re-rendered , all of its child component is re-rendered too, the functions passed
     into the children components are changed on parent rendered because every render a new function is created. 
-    But with the help of 'useCallback' the function would be memoised and hence if parent component is changed 
-    then child component won't changes because the prop function of child components won't changes().
+    But with the help of 'useCallback' the function is memoised and hence if parent component is changed 
+    then child component won't changes because the prop function of child components won't change.
     callback function only changed if any dependencies of that callback us changed.
 
 => Avoiding unnecessary rendered.

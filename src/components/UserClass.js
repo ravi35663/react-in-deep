@@ -1,7 +1,10 @@
 import React from "react";
 console.log("What is in React ",React);
 class UserClass extends React.Component{
-
+    static my_name="Ravi kumar"
+    state = {
+        "count":10000
+    }
     // Life cycle methods of class based component in react.
     
     /* 
@@ -20,8 +23,9 @@ class UserClass extends React.Component{
     constructor(props){
         super(props) // super is used to get props values
         // Always create states in constructor function
+        console.log("COunt value is: ",this.state)
         this.state = {
-            count: 0,
+            // count: 0,
             count_2: 1,
             userInfo:{
                 name:"Dummy",
@@ -40,6 +44,7 @@ class UserClass extends React.Component{
         console.log('componentWillUnmount')
     }
     render(){
+        console.log("Static variable: ",UserClass.my_name)
         // console.log("children Render is called")
         // const {location,name,contact} = this.props;
         const {name,location,login,avatar_url} = this.state.userInfo;

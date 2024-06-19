@@ -17,7 +17,7 @@ const UseRef = ()=>{
 
     return <div>
         <h1>Example of useRef hook</h1>
-        <input ref={inputRef} type={'text'} />
+        <input ref={inputRef} type={'text'}/>
         {/* Label value would not show anything because component is not re-rendering.Directly DOM is getting updated  */}
         <label>Input Value is :{inputRef &&  inputRef.current && inputRef.current.value}</label>
         <button onClick={()=> alert(inputRef.current.value)}>Click Me</button>
