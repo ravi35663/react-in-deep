@@ -18,6 +18,7 @@ import UseRef from "./Learning/Hooks/UseRef";
 import HOCTasks from "./Learning/HOC/Tasks";
 import ReduxExample from "./Learning/Redux/ReduxExample";
 import ReduxToolKitExample from "./Learning/ReduxToolKitExample";
+import CustomHook from "./Learning/CustomHooks";
 // import Shimmer from "./components/Shimmer";
 // import Grocery from "./components/Grocery";
 // import UserContext from "./utils/UserContext";
@@ -139,6 +140,11 @@ const BrowserRoutes = createBrowserRouter([
             {
                 path:'redux-tool-kit-example',
                 element:<ReduxToolKitExample></ReduxToolKitExample>
+            },
+            //Custom hook example
+            {
+                path:'custom-hook',
+                element:<CustomHook></CustomHook>
             }
         ],
         errorElement:<Error /> // if some error occurs, this component will be rendered.
