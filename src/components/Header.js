@@ -40,6 +40,7 @@ const Header = ()=>{
                     <li className='px-4'><Link to={'/hooks/reducer'}>Reducer</Link></li>
                     <li className='px-4'><Link to={'/hooks/memo'}>Memo</Link></li>
                     <li className='px-4'><Link to={'/hoc'}>HOC</Link></li>
+                    <li className='px-4'><Link to={'/redux-thunk'}>Redux Thunk</Link></li>
                     
                     <li className='px-4'>Cart</li>
                     

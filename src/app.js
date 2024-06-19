@@ -19,6 +19,7 @@ import HOCTasks from "./Learning/HOC/Tasks";
 import ReduxExample from "./Learning/Redux/ReduxExample";
 import ReduxToolKitExample from "./Learning/ReduxToolKitExample";
 import CustomHook from "./Learning/CustomHooks";
+import ReduxThunkExample from "./Learning/ReduxThunk/ReduxThunkExample";
 // import Shimmer from "./components/Shimmer";
 // import Grocery from "./components/Grocery";
 // import UserContext from "./utils/UserContext";
@@ -145,6 +146,11 @@ const BrowserRoutes = createBrowserRouter([
             {
                 path:'custom-hook',
                 element:<CustomHook></CustomHook>
+            },
+            // Redux thunk:
+            {
+                path:'redux-thunk',
+                element: <ReduxThunkExample />
             }
         ],
         errorElement:<Error /> // if some error occurs, this component will be rendered.
