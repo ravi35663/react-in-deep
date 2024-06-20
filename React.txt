@@ -200,12 +200,9 @@
 -> finding out difference between two html element is slow but between javascript object is fast.
     this is where the react become fast.
 -> React keeps track of all node (react elements)
-<<<<<<< HEAD
 -> Learn microservices and monolithic in deep
-=======
 
 ==> Learn microservices and monolithic architecture in deep
->>>>>>> b2caf5468a2c792cf0e9816fbafd73a75c7a4f60
 
 -> CORS issue:-
     -> Generally our browser block us to fetch different origin's API access to local host.
@@ -311,20 +308,12 @@
 -> this can be particularly useful for optimizing performance in certain scenarios.
 
 => Used for performance optimization:-
-<<<<<<< HEAD
-    If a parent component is re-rendered , all of its child component is re-rendered too, the functions passed
-    into the children components are changed on parent rendered because every render a new function is created. 
-    But with the help of 'useCallback' the function is memoised and hence if parent component is changed 
-    then child component won't changes because the prop function of child components won't change.
-    callback function only changed if any dependencies of that callback us changed.
-=======
     If a parent component is re-rendered , all of its child component is re-rendered too, 
     the functions passed into the children components are changed on parent rendered because every
     render a new function is created. But with the help of 'useCallback' the function would be 
     memoised and hence if parent component is changed then child component won't changes because 
     the prop function of child components won't changes(). callback function only changed if any 
     dependencies of that callback is changed.
->>>>>>> b2caf5468a2c792cf0e9816fbafd73a75c7a4f60
 
 => Avoiding unnecessary rendered.
 -> Especially when there are complex calculations or prop function passed to a child component.
@@ -391,24 +380,11 @@
 
 => Why Use useRef?
 -> Accessing DOM Elements: 
-    One common use case for useRef is to obtain references to DOM elements. This is useful when you 
-    need to interact with the DOM directly, such as focusing on an input field, measuring the size of 
-    an element, or triggering animations.
-
--> Managing Focus:
-    useRef is commonly used to manage focus in React components. You can create a ref and attach it to 
-    a specific element, allowing you to programmatically set or remove focus without triggering a 
-    re-render.
-
--> Persisting Values Across Renders:
-    Unlike state variables, changes to useRef do not trigger a re-render. This makes it suitable for 
-    persisting values across renders without affecting the component's rendering cycle.
+-> Managing Focus: useRef is commonly used to manage focus in React components.
+-> Persisting Values Across Renders: Unlike state variables, changes to useRef do not trigger a re-render. 
 
 ===>Life Cycle methods in react:-
--> Lifecycle methods in React are used to perform specific tasks or actions at various points in the 
-   lifecycle of a React component. Each component goes through a series of phases, and lifecycle methods 
-   provide developers with the ability to hook into these phases and execute code accordingly. 
-   Here are some reasons why lifecycle methods are essential in React:
+-> Lifecycle methods in React are used to perform specific tasks or actions at various points.
 
    1)Initialization and Setup:
         -> constructor: Used for initializing the component's state and binding event handlers.

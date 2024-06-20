@@ -30,7 +30,8 @@ class About extends Component{
         Note:
             when all the life cycle and life cycle of the method is mounted successfully 
             including all child components then the entire class is mounted successfully.
-            ComponentDidMount is used to make API called because to show the data page after initial render.
+            ComponentDidMount is used to make API called because to show the data page after 
+            initial render.
 
     */
 }

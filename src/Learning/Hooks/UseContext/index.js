@@ -7,7 +7,7 @@ const Tasks = ()=>{
     const [tasks,setTasks] = useState(dummyTasks);
     return <TaskContext.Provider value={{isActive,setIsActive,tasks,setTasks}}>
         {/* Task context is accessible to all its children components */}
-        <Task />
+        <Task ><h1>Hello World</h1></Task>
     </TaskContext.Provider>
 }
 
