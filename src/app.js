@@ -99,7 +99,7 @@ const BrowserRoutes = createBrowserRouter([
                 path:'/grocery',
                 element:<Suspense fallback={<h1>Loading Screen</h1>}> <Grocery /> </Suspense>
                 /*  if we don't wrap our component in the suspense react throw error when we render 
-                    the lazy loading component.This is because component rendered first the and then js 
+                    the lazy loading component.This is because component rendered first and then js 
                     file build for that component.
                     The loading is only happening in the first component rendering.
                     To over comes this issue Suspense provide feature to wait rendering of the component until

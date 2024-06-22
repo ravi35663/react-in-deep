@@ -36,7 +36,7 @@ class UserClass extends React.Component{
         }
         // console.log("children Constructor is called")
     }
-    // After initial componentDidMount, whenever the component is rendered te componentDidUpdate will called.
+    // After initial componentDidMount, whenever the component is rendered the componentDidUpdate will called.
     componentDidUpdate(){
         console.log("Component did update is called");
     }

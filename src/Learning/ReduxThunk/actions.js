@@ -17,6 +17,13 @@ export const FETCH_DATA_ERROR = 'fetch-data-error';
     complex state changes.
 
 */
+
+/*
+    Redux-Saga :
+        Redux-Saga is a middleware library for Redux that helps manage side effects 
+        (like asynchronous operations) in your Redux application. It uses ES6 
+        Generators to make asynchronous code easier to read, write, and test.
+*/
 // Action creators
 export const fetchDataRequest = ()=>{
     return {type:FETCH_DATA_REQUEST};
