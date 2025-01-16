@@ -25,3 +25,18 @@ const UseRef = ()=>{
 };
 
 export default UseRef;
+
+/*
+===> 7) useRef:
+-> In React, the useRef Hook is used to create mutable object references that persist across renders. 
+-> Unlike state variables, changes to useRef do not trigger a re-render of the component. 
+-> useRef is often used to access or store references to DOM elements, manage focus, or persist values 
+   between renders without causing re-renders.
+-> we can use reference whenever we want to , its actual DOM not virtual DOM of element.
+-> without using any stateVariables we can get value of input element .
+
+=> Why Use useRef?
+-> Accessing DOM Elements: 
+-> Managing Focus: useRef is commonly used to manage focus in React components.
+-> Persisting Values Across Renders: Unlike state variables, changes to useRef do not trigger a re-render. 
+*/
