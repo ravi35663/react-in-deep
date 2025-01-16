@@ -1,7 +1,5 @@
 // ####### Always Code slow (to learn things in deep) (Don't hurry).
 /*
-    -> Learn about CDN
-    -> crossorigin ?
     -> package.json is configuration file for npm.
     -> react is a javascript library which is created by facebook developers
     -> we can create our own create-react-app using webpack and all.
