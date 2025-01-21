@@ -20,6 +20,7 @@ import ReduxExample from "./Learning/Redux/ReduxExample";
 import ReduxToolKitExample from "./Learning/ReduxToolKitExample";
 import CustomHook from "./Learning/CustomHooks";
 import ReduxThunkExample from "./Learning/ReduxThunk/ReduxThunkExample";
+import Test from "../test";
 // import Shimmer from "./components/Shimmer";
 // import Grocery from "./components/Grocery";
 // import UserContext from "./utils/UserContext";
@@ -80,6 +81,10 @@ const BrowserRoutes = createBrowserRouter([
             {
                 path:'/',
                 element:<Body />,
+            },
+            {
+                path:'/test',
+                element:<Test />,
             },
             {
                 path:'/about',

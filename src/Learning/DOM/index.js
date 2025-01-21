@@ -44,12 +44,12 @@ const wrapper = shallow(<MyComponent />);
 /*
 
 ====> Virtual DOM :-
---> React does not update the real DOM directly instead it updated the virtual DOM.
---> As per the w3.org, DOM defines the logical structure of documents & the way a document is
-    accessed and manipulated.
+    ->  React does not update the real DOM directly instead it updated the virtual DOM.
+    ->  As per the w3.org, DOM defines the logical structure of documents & the way a document is
+        accessed and manipulated.
 
 => Element Re-Rendering process :-
-                                [DOM]
+                                  [DOM]
                                     |
     [HTML] --> [Parser HTML] -> [DOM tree]    [Layout]
                                     |           |
@@ -57,22 +57,22 @@ const wrapper = shallow(<MyComponent />);
                                     |
     [Style] --> [CSS Parser] -> [style rule]
 
---> Re-calculating the CSS and changing layouts uses very complex algorithm & they affect  the 
-    performance. Hence updating a real dom does not involve just updating the DOM but, it 
-    involve a lot of other process like.
-        -> Re-Calculating Css   
-        -> Changing layouts
-        -> attachment of parsed HTML and CSS
-        -> ..and so on.
+    ->  Re-calculating the CSS and changing layouts uses very complex algorithm & they affect the 
+        performance. Hence updating a real dom does not involve just updating the DOM but, it involve 
+        a lot of other process like.
+            -> Re-Calculating Css   
+            -> Changing layouts
+            -> attachment of parsed HTML and CSS
+            -> ..and so on.
 
---> All the process repeated each time you update the dom irrespective of updating the same dom.
-    this is why updating a real dom is slow.
+    ->  All the process repeated each time you update the DOM irrespective of updating the same dom.
+        this is why updating a real dom is slow.
 
 ==> How virtual DOM  solve this problem :-
---> Virtual DOM is a in-memory representation of actual DOM/real-DOM.
---> Virtual DOM is lightweight javascript object (a javascript Object).Which is a copy of real DOM.
+    ->  Virtual DOM is a in-memory representation of actual DOM/real-DOM.
+    ->  Virtual DOM is lightweight javascript object (a javascript Object). Which is a copy of real DOM.
 
-=> Updating a virtual-DOM in react is faster because React uses these.
+==> Updating a virtual-DOM in react is faster because React uses these.
     -> Efficient Diff algorithm 
     -> Batched Update operation
     -> Efficient Update of subtree only
