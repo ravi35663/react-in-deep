@@ -11,9 +11,19 @@
         Google and other search engines love fast and efficient websites. Speed is the most important 
         Google SEO ranking factor. Better the speed, higher a website can appear in search. So, 
         therefore, more leads and sales it can acquire.
+
     2) Scalability: 
         Protects your website from traffic spikes which can make your website stop responding. 
         Your end-users would not be affected at all.
+        
     3) Security: Any website can come across DDoS attacks or similar. CDN can solve this problem 
         pretty easily.
+
+==> Some CDN distributors:
+    1) Akamai: 
+    2) Cloudflare
+    3) Amazon CloudFront
+    4) Google Cloud CDN
+    5) Microsoft Azure CDN
+        ..and many more are there:
 */
