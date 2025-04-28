@@ -41,6 +41,7 @@ import Test from "../test";
 // This import is not the import we are using above this is different.
 const Grocery = lazy(()=> import('./components/Grocery'));
 const About = lazy(()=> import('./components/About'));
+
 // Link component is work same as anchor tag but it won't refresh the page.
 const AppLayoutComponent = ()=>{
     const [userName,setUserName] = useState('');
