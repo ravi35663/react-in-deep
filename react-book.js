@@ -104,8 +104,16 @@
     -> const h1 = (<h1>
                     Hello World 
                   </h1>) // Valid JSX
-    -> JSX is take care of injections attacks
-    -> JSX also sanitized the data and prevent cross site scripting
+    -> JSX is take care of injections attacks 
+    ->  Injection Attack: Injection attacks are a type of cyberAttack where attackers exploit 
+        vulnerabilities in applications to insert malicious code or commands into an application's 
+        input fields or other entry points. 
+    -> JSX also sanitized the data and prevent 
+    ->  XSS:- 
+        Cross-site scripting (XSS) is a web security vulnerability that allows attackers to inject 
+        malicious scripts into websites, potentially compromising user interactions and data. 
+        These scripts, often JavaScript, are executed by the victim's browser, enabling the attacker 
+        to steal information, manipulate page content, or even impersonate users
 */
 /*
     ==> Components : -
@@ -122,7 +130,7 @@
             <HeadingComponent />;
                 {HeadingComponent()};
             <HeadingComponent></HeadingComponent>;
-        -> components composition is components inside another components and so on.
+        -> Components composition is components inside another components and so on.
         -> Always write components in Capital latter.
 
     ==> Props :-
@@ -145,7 +153,6 @@
         specific concern. 
         In the context of microservices architecture, SoC is crucial for building scalable, maintainable, 
         and flexible systems. 
-        Here's how the concept of SoC applies to microservices:
 
 ==> Shimmer UI:-
     -> Loading card with empty data(for better user experience)
@@ -173,50 +180,52 @@
 
 /*
 ==> Notes:
-    -> there is two way to export module.
+    -> There is two way to export module.
         -> default export (export default anything) to import anything
         -> named export (export const data=[1,2]) to import use {data}
+
     ->  React is fast in DOM manipulation and this is the exact issue react is solving. 
         This is why we use react and all other frameworks are trying to solving this issue.
+
     ->  Actual DOM :- <h1>Actual dom</h1>, <img> ...etc
     ->  Virtual DOM :- Representation of actual DOM.
         -> Virtual DOM is react-element and it will print javascript object.
+
     ->  Diff algorithm find out the diff between virtual DOMs (Old and new Virtual DOM) 
         and then it will render the objects. this whole process is known as reconciliation or react fiber.
+
     ->  Finding out difference between two html element is slow but between javascript object is fast.
         this is where the react become fast.
+
     ->  React keeps track of all node (react elements)
-    -> Whenever a local state (state variable) variable is changed, that particular component re-rendered.
-    -> react do efficient dom manipulation, efficient rendering of components.
-    -> All react app a is single page application (SPA) because only component get interchanged 
-       not entire application's page.
+    ->  Whenever a local state (state variable) variable is changed, that particular component re-rendered.
+    ->  React do efficient dom manipulation, efficient rendering of components.
+
+    ->  All react app are single page application (SPA) because only component get interchanged 
+        not entire application's page.
+
     -> 'rendering', 'loading' and 'mounting' has same meaning.
     -> // Conditional rendering
         if(!listOfRestaurant.length){
             return <Shimmer />
         }
+
     ->  Learn about react-dev-tool (and why we should use it)
     ->  Every frontend has two layers
             1) UI layers
             2) Data layer
-    ->  Learn microservices and monolithic architecture in deep
+
     ->  Never use hooks Conditionally, in loop, or in function.
-    ->  hooks are only used inside components.
-    ->  Every time Header component is rendered, this use effect is called.But because of the dependencies 
-        array the useEffect will executed.
+    ->  Hooks are only used inside components.
+
     ->  Dependencies arrays are not mandatory in useEffect.If there is no dependencies array in useEffect
         every time component is rendered the useEffect getting called.
+
     ->  if dependencies array is empty then useEffect only called on initial render only one time.
     ->  if we provide some values in dependencies array then useEffect only called when dependencies changes.
 
-
 */
 
-/*
-==> CORS issue:-
-    -> Generally our browser block us to fetch different origin's API access to local host.
-    -> we can by-pass this by installing cors extension.
-*/
 
 /*
 ==> HOC: (Higher order component):-
@@ -226,17 +235,10 @@
 
 ==> Why do we use HOC:-
     -> Code Reusability:    
-        HOCs enable you to encapsulate and reuse component logic. Instead of duplicating the same logic 
-        across multiple components, you can create an HOC and apply it to different components.
-
     -> Cross-Cutting Concerns:
         HOCs are often used for cross-cutting concerns, such as authentication, logging, or tracking. 
         These concerns can be applied to multiple components without cluttering the individual components 
         with the related logic.
-
-    -> Abstraction of State or Behavior:
-        HOCs allow you to abstract away certain aspects of state management or behavior, making your 
-        components more focused and easier to understand.
 */
 
 /*
