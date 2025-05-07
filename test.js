@@ -1,24 +1,24 @@
-import { useState } from "react";
+import { createContext, use, useContext, useState } from "react";
 
-// Create custom hook
-const useCounter = ()=>{
-    const [count,setCount] = useState(0);
-    const increment = () => setCount( count + 1);
-    const decrement = () => setCount(count - 1);
-    return {increment,decrement, count}  
-}
-const Test = ()=>{
-    const {count,increment,decrement} = useCounter();
+// Example context:
+const UserContext = createContext({user:{name:"Ravi",id:10}});
+
+const ContextExample = ()=>{
+    const [user,setUser] = useState({name:"Amit",id:2});
     return (
-    <div>
-        <h1>This is test section</h1>
-        <div>
-            <label>Count is: {count}</label><br/>
-            <button onClick={increment}>Increment</button><br/>
-            <button onClick={decrement}>Decrement</button>
-        </div>
-    </div>
-)
+        <UserContext.Provider value={{user,setUser}}>
+            <User />
+        </UserContext.Provider>
+    )
 }
 
-export default Test;
+
+const User = ()=>{
+    const {user} = useContext(UserContext);
+    return (
+        <div>
+            <div> User Id: {user.id}</div>
+            <div>User Name: {user.name}</div>
+        </div>
+    )
+}

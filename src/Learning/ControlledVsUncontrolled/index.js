@@ -1,17 +1,17 @@
 /*
-    Controlled Components:
-    -> A controlled component in react is form data controlled by react state.
-       Every time state of the components is change then form element renders .
+==> Controlled Components:
+    ->  A controlled component in react is form data controlled by react state.
+    ->  Every time state of the components is change then form element renders.
 */
 
-const Controlled = ()=>{
+const ControlledComponent = ()=>{
     const [text,setText] = useState('')
 
     const handleChange = (e)=>{
         setText(e.target.value)
     }
     const handleClick = ()=>{
-        // It is used to avoid default behavior of form (i.e. reload of page);
+        // It is used to avoid default behavior of form (i.e. page reload);
         e.preventDefault();
     }
 
@@ -28,7 +28,7 @@ const Controlled = ()=>{
        communicate to the DOM element and components does not render on form data change.
 */ 
 
-const Uncontrolled = ()=>{
+const UncontrolledControlled = ()=>{
     const inputRef = useRef(null)
     const handleSubmit = ()=>{
         e.preventDefault();
