@@ -1,19 +1,18 @@
 /*
     Virtual DOM:
     -> Virtual DOM is in-memory representation of actual dom in react.
-    -> Virtual DOM allow react to update UI efficiently by difference (diffing)
+    -> Virtual DOM allow react to update UI efficiently by finding the difference (diffing)
        between the current and previous states and then updating only necessary part of
        actual dom.
     -> React creates a virtual dom tree from components
     -> When state changes, React updates the virtual DOM.
-    -> React calculates the difference (diffing) and updates only the changed parts in 
-       the real DOM.
 */
 
 /*
     Shallow DOM:
     -> "Shallow DOM" isn't a standard term in React. However shallow dom rendering is 
        a concept used in testing.
+       
     -> It render a components without rendering its children, providing a way to test 
        components in isolation.
     
