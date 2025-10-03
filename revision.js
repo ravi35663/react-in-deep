@@ -1,12 +1,12 @@
 /*
-    ==> React-Book.js       ==> Done
-    ==> CDN                 ==> Done
-    ==> ControlledVs UnCon  ==> Done
-    ==> CORS:               ==> Done
-    ==> CustomHooks         ==> Done
-    ==> DOM                 ==> Done
-    ==> Fragment            ==> Done
-    ==> HOC                 ==> Done
+    ==> React-Book.js       ==> Inprogress
+    ==> CDN                 ==> 
+    ==> ControlledVs UnCon  ==> 
+    ==> CORS:               ==> 
+    ==> CustomHooks         ==> 
+    ==> DOM                 ==> 
+    ==> Fragment            ==> 
+    ==> HOC                 ==> 
     ==> HOOKS               ==> 
     ==> OptimizeScale
     ==> PureComponent

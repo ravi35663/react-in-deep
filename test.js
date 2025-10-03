@@ -1,24 +1,17 @@
-import { createContext, use, useContext, useState } from "react";
+const { useState, useEffect } = require("react")
 
-// Example context:
-const UserContext = createContext({user:{name:"Ravi",id:10}});
-
-const ContextExample = ()=>{
-    const [user,setUser] = useState({name:"Amit",id:2});
-    return (
-        <UserContext.Provider value={{user,setUser}}>
-            <User />
-        </UserContext.Provider>
-    )
-}
-
-
-const User = ()=>{
-    const {user} = useContext(UserContext);
+const person = ()=>{
+    const [name,setName] = useState(null);
+    useEffect(()=>{
+        setName("Ravi")
+        return ()=> {
+            setName(null);
+        }
+    },[])
     return (
         <div>
-            <div> User Id: {user.id}</div>
-            <div>User Name: {user.name}</div>
+            My name is: {name}
         </div>
     )
 }
+export default person;
