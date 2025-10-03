@@ -26,40 +26,41 @@
         architecture that can take your project from just getting started to 
         massive production application.
     
-    => Things done by parcel
-        -> HMR : hot module replacement (automatically run file when you save file)
-        -> Dev Build
-        -> Provide local server
-        -> Parcel uses file watching algorithm (for HMR):- written in c++
-        -> Gives you faster build because of caching (.parcel-cache kind of binary file)
-        -> Parcel does image optimization
-        -> Minification of files (Project files)
-        -> Bundling
-        -> Compressing of files
-        -> Parcel is manager (Parcel use all libraries to make react fast)
-        -> Consistent hashing?
-        -> Code splitting
-        -> Differentials bundling (to support older browser (diff. bundle for diff browser))
-        -> Error handling
-        -> Diagnostic
-        -> Host app on Https 
-        -> Tree Shaking (remove unused code for you)
-        -> Create different dev and prod bundle
-        -> npx parcel build index.html (building production build)
-        -> Gives you only three files .js,.html and .css
-        -> .parcel-cache and dist can be automatically generated
-        -> not only react is making your app faster, webpack are making your app fast.
-        -> Builder build all files and generated one file but if you have big app then it would not considered 
-            as optimized application unless you bundle them in smaller files and this process is 
-            known as code splitting/chunking/lazy loading/dynamic bundling/dynamic import.
-            This is also known as logical code splitting/ bundling.
+=> Things done by parcel
+    -> HMR : hot module replacement (automatically run file when you save file)
+    -> Dev Build
+    -> Provide local server
+    -> Parcel uses file watching algorithm (for HMR):- written in c++
+    -> Gives you faster build because of caching (.parcel-cache kind of binary file)
+    -> Parcel does image optimization
+    -> Minification of files (Project files)
+    -> Bundling
+    -> Compressing of files
+    -> Parcel is manager (Parcel use all libraries to make react fast)
+    -> Consistent hashing?
+    -> Code splitting
+    -> Differentials bundling (to support older browser (diff. bundle for diff browser))
+    -> Error handling
+    -> Diagnostic
+    -> Host app on Https 
+    -> Tree Shaking (remove unused code for you)
+    -> Create different dev and prod bundle
+    -> npx parcel build index.html (building production build)
+    -> Gives you only three files .js,.html and .css
+    -> .parcel-cache and dist can be automatically generated
+    -> not only react is making your app faster, webpack are making your app fast.
+    -> Builder build all files and generated one file but if you have big app then it 
+        would not considered as optimized application unless you bundle them in smaller 
+        files and this process is known as code splitting/chunking/lazy loading/dynamic 
+        bundling/dynamic import. 
+        This is also known as logical code splitting/ bundling.
 
 ==> Build Application using Parcel:
     -> npx parcel source_file
     -> it creates dist file
     -> .parcel-cache
     -> npx means execute any package
-    -> there are two kinds of dependencies in package.json 
+    -> There are two kinds of dependencies in package.json 
         1) devDependencies (used only for develop and testing purpose not for production)
         2) dependencies (normal dependencies)
     "scripts": {
@@ -69,15 +70,14 @@
         }
     -> npm start === npm run start
     -> never run "npm build" instead run "npm run build" 
+
 ==> Babel:
-    -> Babel is open source javascript compiler.
-    -> Babel transpile the newer javascript code to older JS code so that older browser can understand that.
-    -> Learn more about babel
+    ->  Babel is open source javascript compiler.
+    ->  Babel transpile the newer javascript code to older JS code so that older browser 
+        can understand that.
+    ->  Learn more about babel
 */
-
-
-/*
-
+/*=
 ==> React Element:-
     -> ReactElement ==> Javascript Object ==> Html Element (when it is rendered)
     -> ReactElement is javascript Object
@@ -94,7 +94,8 @@
     -> const jsxHeading = <h1>Hello World</h1> (Element using jsx)
     -> above two lines are equivalent
     -> jsx is not pure javascript because browser and machine cannot understand this.
-    -> jsx before going to browser, (babel) webpack transpile the code so that browser can understand. 
+    -> jsx before going to browser, (babel) webpack transpile the code so that browser 
+       can understand. 
 
 ==> JSX :-
     -> const h1 = <h1>Hello World</h1> // Valid jsx
@@ -108,51 +109,72 @@
     ->  Injection Attack: Injection attacks are a type of cyberAttack where attackers exploit 
         vulnerabilities in applications to insert malicious code or commands into an application's 
         input fields or other entry points. 
+
     -> JSX also sanitized the data and prevent 
     ->  XSS:- 
-        Cross-site scripting (XSS) is a web security vulnerability that allows attackers to inject 
-        malicious scripts into websites, potentially compromising user interactions and data. 
-        These scripts, often JavaScript, are executed by the victim's browser, enabling the attacker 
-        to steal information, manipulate page content, or even impersonate users
+        Cross-site scripting (XSS) is a web security vulnerability that allows attackers to 
+        inject malicious scripts into websites, potentially compromising user interactions 
+        and data. 
+        These scripts, often JavaScript, are executed by the victim's browser, enabling the 
+        attacker to steal information, manipulate page content, or even impersonate users
 */
 /*
-    ==> Components : -
-        -> Everything in react is a component.
-        -> e.g. button , card ...etc
-            1) Class based Components (old way of writing code )
-            2) Functional Components (New way of writing code)
-        -> Functional component is normal js function which return some jsx
-        ->  const HeadingComponent = ()=>{
-                return (<h1>Functional Components</h1>)
-            } // this is a react component
-        -> const HeadingComponent = () => <h1>Functional Components</h1>
-        -> this is how we render Components
-            <HeadingComponent />;
-                {HeadingComponent()};
-            <HeadingComponent></HeadingComponent>;
-        -> Components composition is components inside another components and so on.
-        -> Always write components in Capital latter.
+==> Injection Attacks:
+    ->  An injection attack happens when an attacker puts malicious input into your app, 
+        and your app mistakenly executes it as a command or query.
+    ->  Common types:
+            ->  SQL Injection → attacker runs SQL queries in your DB.
+            ->  Command Injection → attacker runs system commands.
+            ->  NoSQL/LDAP Injection → attacker manipulates queries in NoSQL or directories.
 
-    ==> Props :-
-        -> Short form of properties
-        -> props are just arguments to a function
-        -> const fun = ({name,age,email}) => { 
-                // parameter destructuring is know as destructuring on fly.
-            }
+==> How to Prevent:
+    ->  Validate & Sanitize Input – never trust user input.
+    ->  Use Parameterized Queries/Prepared Statements (instead of string concatenation).
+            e.g., db.query("SELECT * FROM users WHERE id = ?", [userId]) ✅
+    ->  Use ORM/Query Builders – (TypeORM, Sequelize, Mongoose).
+    ->  Escape Special Characters when needed.
+    ->  Least Privilege – DB users should have only required permissions.
+    ->  WAF(Web Application Firewall) / Security Libraries – extra layer of protection.
+*/
 
-    ==> Config driven UI :-
-        ->  on some website when we change UI depends on the locations or something
-            else is know as config driven UI. UI will changed based on requirements
-        ->  config comes from backend .
-        ->  We have control on UI.
-        ->  React say that never uses index as key. never never never.
+/*
+==> Components : -
+    -> Everything in react is a component.
+    -> e.g. button , card ...etc
+        1) Class based Components (old way of writing code )
+        2) Functional Components (New way of writing code)
+    -> Functional component is normal js function which return some jsx
+    -> const HeadingComponent = ()=>{
+            return (<h1>Functional Components</h1>)
+        } // this is a react component
+    -> const HeadingComponent = () => <h1>Functional Components</h1>
+    -> this is how we render Components
+        <HeadingComponent />;
+            {HeadingComponent()};
+        <HeadingComponent></HeadingComponent>;
+    -> Components composition is components inside another components and so on.
+    -> Always write components in Capital latter.
+
+==> Props :-
+    -> Short form of properties
+    -> props are just arguments to a function
+    -> const fun = ({name,age,email}) => { 
+            // parameter destructuring is know as destructuring on fly.
+        }
+
+==> Config driven UI :-
+    ->  on some website when we change UI depends on the locations or something
+        else is know as config driven UI. UI will changed based on requirements
+    ->  config comes from backend.
+    ->  We have control on UI.
+    ->  React say that never uses index as key. never never never.
 
 ==> Separation of Concerns (SoC) :-
-    ->  Separation of Concerns (SoC) is a fundamental design principle in software engineering that 
-        advocates breaking a program into distinct features or modules, each responsible for a 
-        specific concern. 
-        In the context of microservices architecture, SoC is crucial for building scalable, maintainable, 
-        and flexible systems. 
+    ->  Separation of Concerns (SoC) is a fundamental design principle in software 
+        engineering that advocates breaking a program into distinct features or modules, 
+        each module ore feature responsible for a specific concern. 
+        In the context of microservices architecture, SoC is crucial for building scalable, 
+        maintainable and flexible systems. 
 
 ==> Shimmer UI:-
     -> Loading card with empty data(for better user experience)
@@ -164,6 +186,7 @@
     -> useState() :- used to update UI based on state of the variable.
         -> whenever a state variable is updates react re-rendered the component.
         -> React only good at DOM manipulation.
+
     -> useEffect()  :-
         -> special javascript function react.
         -> useEffect(callback_function,[dependencies array]);
@@ -171,11 +194,13 @@
         -> first the body of that component will run then useEffect will run.
 */
 /*
-    ==> Routing in react :-
-        ->  client side routing : when all the pages already loaded and moving from one page to another 
-            won't reload the page.
-        ->  server side routing : when the pages are not loaded at once. whenever we move from one page to 
-            another page will be loaded and that page coming from the server.(i.e. index.html, about.html ..etc)
+==> Routing in react :-
+    ->  Client Side Routing : when all the pages already loaded and moving from one 
+        page to another won't reload the page.
+
+    ->  Server Side Routing : when the pages are not loaded at once. whenever we move 
+        from one page to another page will be loaded and that page coming from the 
+        server.(i.e. index.html, about.html ..etc)
 */
 
 /*
@@ -192,18 +217,17 @@
         -> Virtual DOM is react-element and it will print javascript object.
 
     ->  Diff algorithm find out the diff between virtual DOMs (Old and new Virtual DOM) 
-        and then it will render the objects. this whole process is known as reconciliation or react fiber.
+        and then it will render the objects. this whole process is known as reconciliation 
+        or react fiber.
 
-    ->  Finding out difference between two html element is slow but between javascript object is fast.
-        this is where the react become fast.
-
+    ->  Finding out difference between two html element is slow but between javascript 
+        object is fast. This is where the react become fast.
     ->  React keeps track of all node (react elements)
-    ->  Whenever a local state (state variable) variable is changed, that particular component re-rendered.
+    ->  Whenever a local state (state variable) variable is changed, that particular 
+        component re-rendered.
     ->  React do efficient dom manipulation, efficient rendering of components.
-
-    ->  All react app are single page application (SPA) because only component get interchanged 
-        not entire application's page.
-
+    ->  All react app are single page application (SPA) because only component get 
+        interchanged not entire application's page.
     -> 'rendering', 'loading' and 'mounting' has same meaning.
     -> // Conditional rendering
         if(!listOfRestaurant.length){
@@ -217,98 +241,75 @@
 
     ->  Never use hooks Conditionally, in loop, or in function.
     ->  Hooks are only used inside components.
-
-    ->  Dependencies arrays are not mandatory in useEffect.If there is no dependencies array in useEffect
-        every time component is rendered the useEffect getting called.
-
-    ->  if dependencies array is empty then useEffect only called on initial render only one time.
-    ->  if we provide some values in dependencies array then useEffect only called when dependencies changes.
-
-*/
-
-
-/*
-==> HOC: (Higher order component):-
-    ->  HOC is a function that takes a component and return a enhanced component.
-    ->  HOCs allow you to reuse component logic, share code, and compose components in a more modular 
-        and reusable way.
-
-==> Why do we use HOC:-
-    -> Code Reusability:    
-    -> Cross-Cutting Concerns:
-        HOCs are often used for cross-cutting concerns, such as authentication, logging, or tracking. 
-        These concerns can be applied to multiple components without cluttering the individual components 
-        with the related logic.
+    ->  Dependencies arrays are not mandatory in useEffect. If there is no dependencies 
+        array in useEffect then useEffect run every time component is rendered.
+    ->  if dependencies array is empty then useEffect only called on initial render only 
+        one time.
+    ->  if we provide some values in dependencies array then useEffect only called when 
+        dependencies changes.
 */
 
 /*
 ==> Lifting state up:
     ->  Sharing state between components.
     ->  Sometimes, you want the state of more than one components to change together. 
-        To do it, remove state from all of them, move it to their closest common parent, and then pass it 
-        down to them via props. This is known as lifting state up, and it’s one of the most common things 
-        you will do while writing React code.
+        To do it, remove state from all of them, move it to their closest common parent, 
+        and then pass it down to them via props. This is known as lifting state up, and 
+        it’s one of the most common things you will do while writing React code.
 
 ==> Props Drilling :-
-    -> Passing data from one to other components is very complex when the application is very huge.
-    -> react has 1 way data flow. (parent to children) (Top to bottom)
-    -> Example:
-        // Parent Component
-        const dummy = "Dummy"
-        <Parent>
-            <Child dummy={dummy}></Child>
-        </Parent>
+    ->  Passing data from one to other components is very complex when the application is 
+        very huge.
+    ->  react has 1 way data flow. (parent to children) (Top to bottom)
+    ->  Example:
+            // Parent Component
+            const dummy = "Dummy"
+            <Parent>
+                <Child dummy={dummy}></Child>
+            </Parent>
 
-        // Child component
-        const Child = ({dummy})=>{
-            return <GrandChild dummy={dummy}></ GrandChild>
-        }
+            // Child component
+            const Child = ({dummy})=>{
+                return <GrandChild dummy={dummy}></ GrandChild>
+            }
 
-    -> here dummy need to used by GrandChild component but dummy is in Parent component.hence we are drilling 
-       dummy from parent to grandchild including child component. this is known as props drilling.
-    -> This props drilling is a problem in react.
-    -> we use react context or any state management library to overcome this props drilling issue.
+    ->  Here dummy need to used by GrandChild component but dummy is in Parent component. 
+        Hence we are drilling dummy from parent to grandchild including child component. 
+        This is known as props drilling.
+    ->  This props drilling is a problem in react.
+    ->  We use react context or any state management library to overcome this props 
+        drilling issue.
 */
-
 /*
-===>Life Cycle methods in react:-
--> Lifecycle methods in React are used to perform specific tasks or actions at various points.
+==> Life Cycle methods in react:-
+->  Lifecycle methods in React are used to perform specific tasks or actions at various 
+    points.
 
    1)Initialization and Setup:
-        -> constructor: Used for initializing the component's state and binding event handlers.
-        -> componentDidMount: Invoked after the component has been inserted into the DOM. 
-           It's commonly used for performing initial data fetching or setting up subscriptions.
+        ->  constructor → initialize state, bind handlers(Event handler).
+        ->  componentDidMount → runs after first render, good for data 
+            fetching/subscriptions.
 
     2) Updating State and Props:-
-        -> shouldComponentUpdate: Allows you to control whether the component should re-render after a 
-           state or prop change. Optimizing this method can prevent unnecessary renders.
-        -> componentDidUpdate: Invoked after the component updates. Useful for performing side effects 
-           after a state or prop change.
+        ->  shouldComponentUpdate → controls re-render for performance.
+        ->  componentDidUpdate → runs after updates, useful for side effects.
 
     3) Cleanup and Resource Management:
-        -> componentWillUnmount: Called just before the component is removed from the DOM. 
-           Used for cleanup tasks like cancelling network requests, clearing intervals, or unsubscribing 
-           from data streams.
+        -> componentWillUnmount → runs before removal, used for cleanup (cancel requests, clear intervals).
 
     4) Error Handling:
-        -> componentDidCatch: Introduced in React 16, this method is used to catch JavaScript errors 
-           anywhere in the component tree. It allows you to log errors or display a fallback UI.
+        ->  componentDidCatch → catches JS errors in child components (React 16+).
 
     5) Optimizing Performance:
-    
--> While lifecycle methods are powerful, it's essential to note that with the introduction of Hooks in 
-   React 16.8, functional components have become a common way to write components, and the need for 
-   class-based lifecycle methods has diminished. 
-   The useEffect Hook, in particular, covers most scenarios where lifecycle methods were traditionally 
-   used.
--> In functional components, useEffect allows you to manage side effects and perform cleanup tasks, 
-   similar to componentDidMount, componentDidUpdate, and componentWillUnmount in class components. 
-   The choice between class components and functional components with Hooks often depends on the project's
-   requirements, team preferences, and the specific use case.
+        Optimizing lifecycle methods prevents unnecessary renders.
 
--> In functional components in React, you can use the useEffect Hook to achieve similar effects as the 
-   lifecycle methods in class components. useEffect allows you to perform side effects in your functional 
-   components, such as fetching data, subscribing to external events, or manually managing subscriptions.
+==> Hooks (React 16.8+)
+    ->  Functional components with Hooks (mainly useEffect) replace most lifecycle methods.
+    ->  useEffect can act as:
+            componentDidMount → useEffect(..., [])
+            componentDidUpdate → useEffect(...) (runs after every render)
+            On dependency change → useEffect(..., [deps])
+            componentWillUnmount → return a cleanup function inside useEffect.
 
 ## Here's a brief comparison between lifecycle methods in class components and the equivalent 
    functionality using useEffect in functional components:
@@ -349,12 +350,4 @@
             // You can write clean up function in reach useEffect.
             return <div>This is app component</div>
         }
--> Keep in mind that useEffect can cover scenarios equivalent to componentWillUnmount as well, by returning 
-   a cleanup function inside the useEffect. 
-   Additionally, it can be used to handle scenarios like componentDidCatch by catching errors inside the 
-   component and logging or handling them.
--> In functional Components useEffect hook replaced life cycle methods. 
--> Hooks are introduced in react 16.8 version
--> Hooks are nothing but special javascript function with some super power to do some very special kind of 
-   works.
 */
