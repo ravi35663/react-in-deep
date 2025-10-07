@@ -30,10 +30,10 @@
 */ 
 
 /*
-        How to scale react applications:
-            Scaling React applications involves ensuring they can handle increased 
-            complexity, maintainability, performance, and team collaboration as they 
-            grow larger. 
+How to scale react applications:
+    Scaling React applications involves ensuring they can handle increased 
+    complexity, maintainability, performance, and team collaboration as they 
+    grow larger. 
         => Here are key strategies for scaling React applications:
         1) Component Architecture: 
             Organize components into reusable and modular units.

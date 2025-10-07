@@ -4,3 +4,10 @@ import { createContext } from "react";
 const TaskContext = createContext({});
 
 export default TaskContext;
+
+/*
+Create context:
+const initialState = {}
+const TaskContext = CreateContext(initialState)
+export TaskContext
+*/
