@@ -43,21 +43,22 @@ export default Tasks;
 */
 
 /*
-    ===> 3)UseContext:-
-    ->  useContext is a hook in react which is used to share values/data across its children components.
-    ->  Context is way to share values, such as themes, authentication status between component without
-        explicitly passing data through each level of the component tree.
+==> 3)UseContext:
+    ->  useContext is a hook in react which is used to share values/data across its 
+        children components.
+    ->  Context is way to share values, such as themes, authentication status between 
+        component without explicitly passing data through each level of the component tree.
 
-    ->  We use context to avoid props drilling (passing props in each level of the components tree)
+    ->  We use context to avoid props drilling:
     ->  we use context to write cleaner code.
     ->  See example where it is implemented.
 
-    ==> Context (React context):
-    ->  This is a place where you can store data globally/module_wise so that you can access it in any 
-        component without props drilling.
+==> Context (React context):
+    ->  This is a place where you can store data globally/module_wise so that you can 
+        access it in any component without props drilling.
     ->  In react we can create as many context we want.
-    ->  In class based components we cannot use context because we don't have hooks in class based 
-        component.
+    ->  In class based components we cannot use context because we don't have hooks in 
+        class based component.
     ->  but we can also use that context using 
         <ContextName.Consumer> (data)=> console.log("Data ",data)</ContextName.Consumer>
         you can get all context data into you class based component.

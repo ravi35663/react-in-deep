@@ -10,7 +10,7 @@ const ControlledComponent = ()=>{
     const handleChange = (e)=>{
         setText(e.target.value)
     }
-    const handleClick = ()=>{
+    const handleClick = (e)=>{
         // It is used to avoid default behavior of form (i.e. page reload);
         e.preventDefault();
     }

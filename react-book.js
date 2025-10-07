@@ -18,7 +18,6 @@
         modules and so on.. is known as transitive dependencies.
     ->  dependencies tree 
 */
-
 /*
 ==> Parcel : -
     ->  Parcel is a zero configuration build tool for the web. 
@@ -77,7 +76,7 @@
         can understand that.
     ->  Learn more about babel
 */
-/*=
+/*
 ==> React Element:-
     -> ReactElement ==> Javascript Object ==> Html Element (when it is rendered)
     -> ReactElement is javascript Object
@@ -136,7 +135,6 @@
     ->  Least Privilege – DB users should have only required permissions.
     ->  WAF(Web Application Firewall) / Security Libraries – extra layer of protection.
 */
-
 /*
 ==> Components : -
     -> Everything in react is a component.
@@ -202,7 +200,6 @@
         from one page to another page will be loaded and that page coming from the 
         server.(i.e. index.html, about.html ..etc)
 */
-
 /*
 ==> Notes:
     -> There is two way to export module.
@@ -248,7 +245,6 @@
     ->  if we provide some values in dependencies array then useEffect only called when 
         dependencies changes.
 */
-
 /*
 ==> Lifting state up:
     ->  Sharing state between components.
@@ -313,41 +309,42 @@
 
 ## Here's a brief comparison between lifecycle methods in class components and the equivalent 
    functionality using useEffect in functional components:
-   ==> Classed Based Components:
-        class App extends React.Component{
-            componentDidMount(){
-                // This function is called after first render of the component in the DOM.
-            }
 
-            componentDidUpdate(prepProps,PrevState){
-                // This life cycle method is called after each render of the component.
-            }
-
-            render(){
-                return <div>This is App component</div>
-            }
+==> Classed Based Components:
+    class App extends React.Component{
+        componentDidMount(){
+            // This function is called after first render of the component in the DOM.
         }
 
-    ==> Function Component (Modern React)
-        function App(){
-            useEffect(()=>{
-                // This is called after first render of component in DOM.
-                // call of useEffect with empty dependencies is equivalent to componentDidMount in class based comp.
-                
-                //this is equivalent to life cycle method componentWillUnmount
-                return ()=>{
-                    console.log("Return a clean up function if needed);
-                }
-            },[]);
-
-            useEffect(()=>{
-                console.log("This useEffect hook is run after each render of the component.");
-            })
-
-            useEffect(()=>{
-                console.log("This useEffect hook is called whenever someProps or someVar value changes");
-            },[someProps,someVar]) 
-            // You can write clean up function in reach useEffect.
-            return <div>This is app component</div>
+        componentDidUpdate(prepProps,PrevState){
+            // This life cycle method is called after each render of the component.
         }
+
+        render(){
+            return <div>This is App component</div>
+        }
+        }
+
+==> Function Component (Modern React)
+    function App(){
+        useEffect(()=>{
+            // This is called after first render of component in DOM.
+            // call of useEffect with empty dependencies is equivalent to componentDidMount in class based comp.
+            
+            //this is equivalent to life cycle method componentWillUnmount
+            return ()=>{
+                console.log("Return a clean up function if needed);
+            }
+        },[]);
+
+        useEffect(()=>{
+            console.log("This useEffect hook is run after each render of the component.");
+        })
+
+        useEffect(()=>{
+            console.log("This useEffect hook is called whenever someProps or someVar value changes");
+        },[someProps,someVar]) 
+        // You can write clean up function in reach useEffect.
+        return <div>This is app component</div>
+    }
 */

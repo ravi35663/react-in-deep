@@ -8,7 +8,6 @@ const UseCallback = ()=>{
     const increment = ()=>{
         setCount(count+1);
     }
-   
 
     const handleChild1 = useCallback(()=>{
         // its will always show the initial value of count because on each re-rendering this function is memoised
@@ -38,19 +37,21 @@ export default UseCallback;
 /*
 ===>useCallback:
     ->  'useCallback' is a react hook which is used for memoisation of functions.
-    ->  useCallback return a memoised version of callback function that only changes if any 
-        dependencies of that callback is changed.
+    ->  useCallback return a memoised version of callback function that only changes if 
+        any dependencies of that callback is changed.
     ->  This can be particularly useful for optimizing performance in certain scenarios.
 
     => Used for performance optimization:-
-        If a parent component is re-rendered , all of its child component is re-rendered too, 
-        the functions passed into the children components are changed on parent rendered because every
-        render a new function is created. But with the help of 'useCallback' the function will be 
-        memoised and hence if parent component is changed then child component won't changes because 
-        the prop function of child components won't changes(). callback function only changed if any 
-        dependencies of that callback is changed.
+        If a parent component is re-rendered , all of its child component is re-rendered 
+        too, the functions passed into the children components are changed on parent 
+        rendered because every render a new function is created. But with the help of 
+        'useCallback' the function will be memoised and hence if parent component is 
+        changed then child component won't changes because the prop function of child 
+        components won't changes(). callback function only changed if any dependencies of 
+        that callback is changed.
 
     => Avoiding unnecessary rendered.
-        ->  Especially when there are complex calculations or prop function passed to a child component.
+        ->  Especially when there are complex calculations or prop function passed to a 
+            child component.
         ->  It prevent unnecessary child rendering if parent component is re-rendered.
 */
