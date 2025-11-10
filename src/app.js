@@ -21,6 +21,8 @@ import ReduxToolKitExample from "./Learning/ReduxToolKitExample";
 import CustomHook from "./Learning/CustomHooks";
 import ReduxThunkExample from "./Learning/ReduxThunk/ReduxThunkExample";
 import Test from "../test";
+import UseLayoutEffectExample from "./Learning/hooks/useLayoutEffect";
+import Parent from "./Learning/hooks/useImperativeHandle";
 // import Shimmer from "./components/Shimmer";
 // import Grocery from "./components/Grocery";
 // import UserContext from "./utils/UserContext";
@@ -157,6 +159,16 @@ const BrowserRoutes = createBrowserRouter([
             {
                 path:'redux-thunk',
                 element: <ReduxThunkExample />
+            },
+            // Use layout effect:
+            {
+                path:'use-layout-effect',
+                element: <UseLayoutEffectExample />
+            },
+            // Use layout effect:
+            {
+                path:'use-imperative-handle',
+                element: <Parent />
             }
         ],
         errorElement:<Error /> // if some error occurs, this component will be rendered.

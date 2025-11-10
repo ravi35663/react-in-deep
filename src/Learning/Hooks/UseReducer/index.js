@@ -49,13 +49,15 @@ export default UseReducer;
     ->  Useful when state has multiple sub-values or depends on the previous state.
     ->  Provides more organized and maintainable state management.
     ->  Enables predictable state transitions through defined actions.
-    ->  Centralizes state logic in one reducer function for easier management and understanding.
+    ->  Centralizes state logic in one reducer function for easier management and 
+        understanding.
 
    ** Basic syntax of useReducer:
    const [state, dispatch] = useReducer(reducer, initialState);
-   * state: represents the current state.
-   * dispatch: is a function used to dispatch actions to update the state.(just like setState)
-   * reducer: is a function that takes the current state and an action and returns the new state.
+   * state:     represents the current state.
+   * dispatch:  is a function used to dispatch actions to update the state.(just like setState)
+   * reducer:   is a function that takes the current state and an action and returns 
+   *            the new state.
    * initialState: is the initial state of the component.
 
 */

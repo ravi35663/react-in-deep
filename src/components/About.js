@@ -32,7 +32,6 @@ class About extends Component{
             including all child components then the entire class is mounted successfully.
             ComponentDidMount is used to make API called because to show the data page after 
             initial render.
-
     */
 }
 /*

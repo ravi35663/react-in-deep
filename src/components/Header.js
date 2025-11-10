@@ -43,6 +43,8 @@ const Header = ()=>{
                     <li className='px-4'><Link to={'/hoc'}>HOC</Link></li>
                     <li className='px-4'><Link to={'/redux-thunk'}>Redux Thunk</Link></li>
                     <li className='px-4'> <Link to={'/custom-hook'}>Custom Hooks</Link></li>
+                    <li className='px-4'> <Link to={'/use-layout-effect'}>Use Layout Effect</Link></li>
+                    <li className='px-4'> <Link to={'/use-imperative-handle'}>Use Imperative Handler</Link></li>
                     
                     <li className='px-4'>Cart</li>
                     

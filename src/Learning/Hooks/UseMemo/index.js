@@ -8,7 +8,7 @@ const heavyCalculation  = (count)=>{
 const UseMemo = ()=>{
     const [count,setCount] = useState(0);
     const increment = ()=> setCount(count+1);
-    // It useMemo is not implemented then on each re-render heavyCalculation happens again and again.
+    // If useMemo is not implemented then on each re-render heavyCalculation happens again and again.
     const heavyCalculationMemoized = useMemo(()=>{
         console.log("useMemo without dependencies");
         return heavyCalculation(count);
