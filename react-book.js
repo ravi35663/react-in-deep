@@ -219,13 +219,19 @@
 
     ->  Finding out difference between two html element is slow but between javascript 
         object is fast. This is where the react become fast.
+
     ->  React keeps track of all node (react elements)
+
     ->  Whenever a local state (state variable) variable is changed, that particular 
         component re-rendered.
+
     ->  React do efficient dom manipulation, efficient rendering of components.
+
     ->  All react app are single page application (SPA) because only component get 
         interchanged not entire application's page.
+
     -> 'rendering', 'loading' and 'mounting' has same meaning.
+
     -> // Conditional rendering
         if(!listOfRestaurant.length){
             return <Shimmer />
@@ -238,10 +244,13 @@
 
     ->  Never use hooks Conditionally, in loop, or in function.
     ->  Hooks are only used inside components.
+
     ->  Dependencies arrays are not mandatory in useEffect. If there is no dependencies 
         array in useEffect then useEffect run every time component is rendered.
+
     ->  if dependencies array is empty then useEffect only called on initial render only 
         one time.
+
     ->  if we provide some values in dependencies array then useEffect only called when 
         dependencies changes.
 */

@@ -7,7 +7,7 @@ export default TaskContext;
 
 /*
 Create context:
-const initialState = {}
-const TaskContext = CreateContext(initialState)
-export TaskContext
+    const initialState = {}
+    const TaskContext = CreateContext(initialState)
+    export TaskContext
 */
