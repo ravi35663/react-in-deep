@@ -42,27 +42,30 @@ export const CountReducer = (state=0,{type})=>{
 */
 /*
     Reducer: Handles how the state changes based on actions.
-    Action: Describes what changes should be made to the state.
-    Store: Manages the state and allows interaction with it.
+    Action:  Describes what changes should be made to the state.
+    Store:   Manages the state and allows interaction with it.
 */
+
 // You can add multiple reducers
 // Create store
 export const store = createStore(CountReducer);
 
 /*
-    -> Redux is a state management library for JavaScript applications, primarily used with 
-    React for building user interfaces. 
-    -> Redux provides a predictable state container, which helps manage the state of an 
-    application in a more organized and scalable way. 
-    -> Redux follows a unidirectional data flow and introduces concepts such as actions, reducers, 
-    and a single immutable state tree.
+->  Redux is a state management library for JavaScript applications, primarily used with 
+    react for building user interfaces. 
 
-    ===> Why do we use redux :-
-    --> Centralized State Management: 
+->  Redux provides a predictable state container, which helps manage the state of an 
+    application in a more organized and scalable way. 
+    
+->  Redux follows a unidirectional data flow and introduces concepts such as actions, 
+    reducers, and a single immutable state tree.
+
+==> Why do we use redux :
+    ->  Centralized State Management: 
         Redux provides a centralized store where the entire state of an application is stored. 
         This makes it easier to manage and debug complex state interactions.
 
-    --> Predictable State Changes: 
+    ->  Predictable State Changes: 
         Redux follows a strict unidirectional data flow, making it easier to understand how the 
         state changes over time. Changes to the state are made through pure functions called 
         reducers.
@@ -78,6 +81,4 @@ export const store = createStore(CountReducer);
     --> Middleware Support: 
         Redux has middleware support, enabling developers to extend the functionality of Redux 
         with custom middleware for tasks like logging, asynchronous actions, and more.
-
-
 */

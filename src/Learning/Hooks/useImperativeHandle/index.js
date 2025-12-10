@@ -34,6 +34,7 @@ const Child1 = React.forwardRef((props,inputRef)=>{
 */
 const Child2 = forwardRef((props,ref)=>{
     const inputRef = useRef(null);
+    console.log("Hello World");
     useImperativeHandle(ref,()=>{
         return {
             focus:()=> inputRef.current.focus(),

@@ -3,8 +3,8 @@ import  TaskContext  from "./MyContext"
 import Task from "./Task"
 const dummyTasks = [{name:"task 1",rating:1},{name:"task 2",rating:2},{name:"task 3",rating:3},{name:"task 4",rating:4}]
 const Tasks = ()=>{
-    const [isActive,setIsActive] = useState(true);
-    const [tasks,setTasks] = useState(dummyTasks);
+    const [isActive, setIsActive] = useState(true);
+    const [tasks, setTasks] = useState(dummyTasks);
     return <TaskContext.Provider value={{isActive,setIsActive,tasks,setTasks}}>
         {/* Task context is accessible to all its children components */}
         <Task ><h1>Hello World</h1></Task>
