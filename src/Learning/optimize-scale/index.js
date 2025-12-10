@@ -22,7 +22,8 @@
                 </React.Suspense>
             );
         }
-    4) Optimize State Management: Lift state up only when necessary, and use Context API or Redux efficiently.
+    4)  Optimize State Management: Lift state up only when necessary, and use Context API or 
+        Redux efficiently.
     
     5) Avoid Inline Functions and Objects: Define functions outside the render method.
         const handleClick = () =>   //handle click ;
@@ -47,5 +48,4 @@ How to scale react applications:
         4) Optimize Performance:
             Profile and optimize performance using tools like Chrome DevTools and 
             React Developer Tools
-
 */

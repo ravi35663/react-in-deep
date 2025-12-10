@@ -15,9 +15,7 @@ export const FETCH_DATA_ERROR = 'fetch-data-error';
 
     Flexible Dispatching: Allows dispatching multiple actions, which is useful for 
     complex state changes.
-
 */
-
 /*
     Redux-Saga :
         Redux-Saga is a middleware library for Redux that helps manage side effects 

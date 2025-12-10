@@ -33,11 +33,19 @@ const UseLayoutEffectExample = ()=>{
         // },2*1000)
     },[])
     // ⚡ useLayoutEffect (runs before paint)
-    useLayoutEffect(()=>{
+    useLayoutEffect(async ()=>{
         console.log("Running useLayoutEffect",count);
-        setCount(100);
+        // setCount(100);
+        await new Promise(resolve=>{
+            setTimeout(()=>{
+                setCount(2000);
+                resolve();
+            },10 * 1000)
+        })
+        console.log("Running useLayoutEffect line 45",count);
       return () => console.log("Cleanup before next layout effect or unmount");
     },[]);
+    
     return (
         <div className="">
             <label>Count is: {count}</label>

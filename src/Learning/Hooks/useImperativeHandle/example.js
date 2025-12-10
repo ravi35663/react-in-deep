@@ -4,9 +4,9 @@ import React, { useRef, useImperativeHandle, forwardRef, useState } from "react"
     behaviors of a child component directly.
 
     Example analogy:
-    Component	            Role	            Example
+    Component	              Role	              Example
     Parent	                Remote control	    Can call play(), pause(), etc.
-    Child	                TV	                Defines what those buttons do internally
+    Child	                  TV	                Defines what those buttons do internally
 */
 /*
     The parent gives a ref to the child.
@@ -43,7 +43,7 @@ Note:
 */
 const Modal = forwardRef((props, ref) => {
   const [isOpen, setIsOpen] = useState(false);
-
+  console.log("Hello World line 46: ")
   useImperativeHandle(ref, () => ({
     open: () => setIsOpen(true),
     close: () => setIsOpen(false)
