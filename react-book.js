@@ -141,6 +141,7 @@
     -> e.g. button , card ...etc
         1) Class based Components (old way of writing code )
         2) Functional Components (New way of writing code)
+
     -> Functional component is normal js function which return some jsx
     -> const HeadingComponent = ()=>{
             return (<h1>Functional Components</h1>)
@@ -186,7 +187,7 @@
         -> React only good at DOM manipulation.
 
     -> useEffect()  :-
-        -> special javascript function react.
+        -> Special javascript function react.
         -> useEffect(callback_function,[dependencies array]);
         -> Use effect is called after the component is rendered.
         -> first the body of that component will run then useEffect will run.

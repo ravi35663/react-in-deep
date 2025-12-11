@@ -34,10 +34,10 @@ import Parent from "./Learning/hooks/useImperativeHandle";
 //dynamic import
 // This is also called 'on demand loading'
 
-/* If we add lazy loading import with any component then while loading/rendering components on homes 
-   or any other component, that component with lazy loading will not load unless we go to that 
-   component.The benefit of this implementation is to only load those components which are on current 
-   use.
+/*  If we add lazy loading import with any component then while loading/rendering 
+    components on homes or any other component, that component with lazy loading will not 
+    load unless we go to that component. The benefit of this implementation is to only 
+    load those components which are on current use.
 */
 
 // This import is not the import we are using above this is different.
