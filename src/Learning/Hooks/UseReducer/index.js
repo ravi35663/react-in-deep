@@ -2,7 +2,8 @@ import { useReducer } from "react"
 
 const initialState = {count:0}
 /*
-    Below state is parameter of argument initialState(as added in useReducer) and {type} is action 
+    Below state is parameter of argument initialState(as added in useReducer) and 
+    {type} is action 
 */
 const reducer = (state,{type})=>{
     switch(type){
@@ -59,5 +60,4 @@ export default UseReducer;
    * reducer:   is a function that takes the current state and an action and returns 
    *            the new state.
    * initialState: is the initial state of the component.
-
 */

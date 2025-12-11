@@ -19,7 +19,7 @@
     4)  Browser and Hash Routing: 
         Support for both BrowserRouter (using HTML5 history API) and HashRouter 
         (using URL hash).
-    5) Route Parameters: Extract and use parameters from URLs.
+    5)  Route Parameters: Extract and use parameters from URLs.
 
     6) Programmatic Navigation: Navigate programmatically using hooks or higher-order components.
 */

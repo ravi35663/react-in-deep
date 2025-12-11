@@ -1,11 +1,11 @@
 /*
 ==> Virtual DOM:
-    -> Virtual DOM is in-memory representation of actual dom in react.
-    -> Virtual DOM allow react to update UI efficiently by finding the difference (diffing)
-       between the current and previous states and then updating only necessary part of
-       actual dom.
-    -> React creates a virtual dom tree from components
-    -> When state changes, React updates the virtual DOM.
+    ->  Virtual DOM is in-memory representation of actual dom in react.
+    ->  Virtual DOM allow react to update UI efficiently by finding the difference 
+        (diffing) between the current and previous states and then updating only 
+        necessary part of actual dom.
+    ->  React creates a virtual dom tree from components
+    ->  When state changes, React updates the virtual DOM.
 */
 /*
 ==> Shallow DOM:
@@ -26,10 +26,10 @@ const wrapper = shallow(<MyComponent />);
 
 /*
 ==> Real DOM:
-    -> Real dom is an actual representation of element in the browser.
-    -> Manipulating the real DOM is slower because every change causes the browser 
-       to re-render part or all of the page.
-    -> Directly manipulating DOM elements with vanilla JavaScript or jQuery.
+    ->  Real dom is an actual representation of element in the browser.
+    ->  Manipulating the real DOM is slower because every change causes the browser 
+        to re-render part or all of the page.
+    ->  Directly manipulating DOM elements with vanilla JavaScript or jQuery.
         document.getElementById('name').textContent = "Ravi"
 */
 /*
@@ -60,8 +60,8 @@ const wrapper = shallow(<MyComponent />);
             -> attachment of parsed HTML and CSS
             -> ..and so on.
 
-    ->  All the process repeated each time you update the DOM irrespective of updating the 
-        same dom. this is why updating a real dom is slow.
+    ->  All the process repeated each time you update the DOM irrespective of updating 
+        the same dom. this is why updating a real dom is slow.
 
 ==> How virtual DOM  solve this problem :-
     ->  Virtual DOM is a in-memory representation of actual DOM/real-DOM.
@@ -87,8 +87,8 @@ Note:
     At any given time, ReactJS maintains two virtual DOM, one with the updated state 
     Virtual DOM and other with the previous state Virtual DOM.
 
-4)  ReactJS using diff algorithm compares both the Virtual DOM to find the minimum number of 
-    steps to update the Real DOM.
+4)  ReactJS using diff algorithm compares both the Virtual DOM to find the minimum 
+    number of steps to update the Real DOM.
 
 5)  Finding the minimum number of modifications between two trees have complexity in the 
     order of O(n^3). 
@@ -102,7 +102,7 @@ Note:
     components even if child components are not modified. 
     To prevent the unwanted re-render of the child components we can use 
     shouldComponentUpdate() component life cycle method or useMemo or React.memo in 
-    functional component . This will further help in boosting performance.
+    functional component. This will further help in boosting performance.
 
 2) Breadth First Search :-
     ReactJS traverse the tree using BFS. Consider the below tree. States of element B and 
@@ -137,23 +137,23 @@ Note:
        the event loop, there is exactly one time when the Real DOM is being painted. 
        Thus all the layout process will run only on time for updating the real DOM.
 
-=========> SSR vs CSR (Server-Side-Rendering VS Client-Side-Rendering):-
-===> SSR :-
---> server-side-rendering is when you request a HTML page from the server and server 
-    serve you a HTML page.
---> SSR-at request time:-
-    Server side rendering may happen at request-time, in which case the server dynamically 
-    generates the HTML for each URL request at run time.
-    This is also called Dynamic Server Side Rendering.
+===> SSR vs CSR (Server-Side-Rendering VS Client-Side-Rendering):-
+=> SSR :-
+    -> server-side-rendering is when you request a HTML page from the server and server 
+        serve you a HTML page.
+    -> SSR-at request time:-
+        Server side rendering may happen at request-time, in which case the server dynamically 
+        generates the HTML for each URL request at run time.
+        This is also called Dynamic Server Side Rendering.
 
---> SSR-at build time:
-    Alternatively, the HTML for the web pages may be pre-generated on the server side at 
-    “build” time, and this pre-generated static HTML is returned to the browser, 
-    when the webpage is requested
-    i.e. HTML is pre-generated, and is not generated on the fly at request-time.
-    This is also called Pre-rendering.
+    -> SSR-at build time:
+        Alternatively, the HTML for the web pages may be pre-generated on the server side at 
+        “build” time, and this pre-generated static HTML is returned to the browser, 
+        when the webpage is requested
+        i.e. HTML is pre-generated, and is not generated on the fly at request-time.
+        This is also called Pre-rendering.
 
-===> Client Side Rendering (CSR):
+==> Client Side Rendering (CSR):
 -> Client Side Rendering means generating the HTML components on the browser side, by 
     executing Javascript code within the browser that manipulates the HTML DOM to build 
     the HTML nodes.

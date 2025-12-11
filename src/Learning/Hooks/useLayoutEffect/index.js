@@ -5,6 +5,7 @@
     ->  
         useEffect → runs after the screen is painted.
         useLayoutEffect → runs before the screen is painted.
+        
     ->  The main benefit of useLayoutEffect is that it lets you synchronously read and 
         modify the DOM before the browser paints the screen — so the user never sees an 
         inconsistent or flickering UI.
