@@ -18,7 +18,7 @@ import UseRef from "./Learning/Hooks/UseRef";
 import HOCTasks from "./Learning/HOC/Tasks";
 import ReduxExample from "./Learning/Redux/ReduxExample";
 import ReduxToolKitExample from "./Learning/ReduxToolKitExample";
-import CustomHook from "./Learning/CustomHooks";
+import CustomHook from "./Learning/custom-hooks";
 import ReduxThunkExample from "./Learning/ReduxThunk/ReduxThunkExample";
 import Test from "../test";
 import UseLayoutEffectExample from "./Learning/hooks/useLayoutEffect";
