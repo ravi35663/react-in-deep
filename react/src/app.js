@@ -20,7 +20,7 @@ import ReduxExample from "./Learning/Redux/ReduxExample";
 import ReduxToolKitExample from "./Learning/ReduxToolKitExample";
 import CustomHook from "./Learning/custom-hooks";
 import ReduxThunkExample from "./Learning/ReduxThunk/ReduxThunkExample";
-import Test from "../test";
+// import Test from "../test";
 import UseLayoutEffectExample from "./Learning/hooks/useLayoutEffect";
 import Parent from "./Learning/hooks/useImperativeHandle";
 // import Shimmer from "./components/Shimmer";
@@ -85,10 +85,10 @@ const BrowserRoutes = createBrowserRouter([
                 path:'/',
                 element:<Body />,
             },
-            {
-                path:'/test',
-                element:<Test />,
-            },
+            // {
+            //     path:'/test',
+            //     element:<Test />,
+            // },
             {
                 path:'/about',
                 // element:<About/>,
