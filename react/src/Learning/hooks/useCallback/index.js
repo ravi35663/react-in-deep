@@ -35,7 +35,7 @@ const UseCallback = ()=>{
 export default UseCallback;
 
 /*
-===>useCallback:
+=>useCallback:
     ->  'useCallback' is a react hook which is used for memoisation of functions.
     ->  useCallback return a memoised version of callback function that only changes if 
         any dependencies of that callback is changed.
